@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebCréa Studio crée des sites internet modernes et professionnels pour les artisans, commerçants et indépendants.">
+
+  <title>WebCréa Studio | Création de sites internet</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* MENU SMARTPHONE */
+    .site-navigation {
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* REALISATION */
+    .portfolio-card {
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding: 25px;
+      background: #151d30;
+      border: 1px solid #293850;
+      border-radius: 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .portfolio-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      background: #0b1020;
+      border-radius: 12px;
+    }
+
+    .portfolio-card h3 {
+      color: #38bdf8;
+      font-size: 28px;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: 35px auto 0;
+      padding: 35px 25px;
+      background: #151d30;
+      border: 1px solid #293850;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin: 15px 0;
+      color: #38bdf8;
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      max-width: 850px;
+      margin: 20px auto;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .site-navigation {
+        display: block;
+        padding: 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 16px;
+        border: 0;
+        background: #101b30;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        background: #101b30;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 16px 20px;
+        text-align: center;
+        border-top: 1px solid #293850;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .portfolio-card {
+        padding: 15px;
+      }
+
+      .contact-box {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- EN-TETE -->
+  <header>
+    <div class="logo">
+      Web<span>Créa</span> Studio
+    </div>
+  </header>
+
+  <!-- MENU -->
+  <nav class="site-navigation" aria-label="Navigation principale">
+
+    <button
+      type="button"
+      class="menu-toggle"
+      id="menuToggle"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      <span aria-hidden="true">☰</span>
+      Menu
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Nos offres</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avantages">Pourquoi nous ?</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+  <main>
+
+    <!-- ACCUEIL -->
+    <section class="hero" id="accueil">
+
+      <h1>
+        Un site internet professionnel
+        pour développer votre activité.
+      </h1>
+
+      <p>
+        WebCréa Studio crée des sites internet
+        modernes pour les artisans,
+        commerçants et entrepreneurs.
+        Des solutions adaptées à votre image,
+        accessibles sur ordinateur,
+        tablette et smartphone.
+      </p>
+
+      <a href="#services" class="btn">
+        Découvrir nos offres
+      </a>
+
+      <a href="#contact" class="btn">
+        Nous contacter
+      </a>
+
+    </section>
+
+    <!-- OFFRES -->
+    <section class="section" id="services">
+
+      <h2>Nos offres de création</h2>
+
+      <p class="intro">
+        Des sites internet modernes,
+        adaptés aux besoins et aux budgets
+        des petites entreprises.
+      </p>
+
+      <div class="cards">
+
+        <!-- ESSENTIEL -->
+        <article class="card">
+
+          <h3>Site Essentiel</h3>
+
+          <div class="price">199 €</div>
+
+          <ul>
+            <li>Site vitrine 1 page</li>
+            <li>Design moderne</li>
+            <li>Adapté aux smartphones</li>
+            <li>Présentation de votre activité</li>
+            <li>Bouton de contact</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="mailto:webcreastudio.france@gmail.com?subject=Demande%20de%20devis%20-%20Site%20Essentiel%20199%E2%82%AC&body=Bonjour%20WebCr%C3%A9a%20Studio%2C%0A%0AJe%20souhaite%20des%20informations%20sur%20le%20Site%20Essentiel.%0A%0ANom%20de%20mon%20entreprise%20%3A%0AMon%20activit%C3%A9%20%3A%0AMon%20projet%20%3A%0A%0ACordialement.">
+            Demander un devis
+          </a>
+
+        </article>
+
+        <!-- PROFESSIONNEL -->
+        <article class="card featured">
+
+          <h3>Site Professionnel</h3>
+
+          <div class="price">399 €</div>
+
+          <ul>
+            <li>Jusqu'à 5 pages</li>
+            <li>Design personnalisé</li>
+            <li>Compatible smartphones</li>
+            <li>Galerie de réalisations</li>
+            <li>Formulaire de contact</li>
+            <li>Référencement de base</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="mailto:webcreastudio.france@gmail.com?subject=Demande%20de%20devis%20-%20Site%20Professionnel%20399%E2%82%AC&body=Bonjour%20WebCr%C3%A9a%20Studio%2C%0A%0AJe%20souhaite%20des%20informations%20sur%20le%20Site%20Professionnel.%0A%0ANom%20de%20mon%20entreprise%20%3A%0AMon%20activit%C3%A9%20%3A%0AMon%20projet%20%3A%0A%0ACordialement.">
+            Demander un devis
+          </a>
+
+        </article>
+
+        <!-- PREMIUM -->
+        <article class="card">
+
+          <h3>Site Premium</h3>
+
+          <div class="price">599 €</div>
+
+          <ul>
+            <li>Jusqu'à 8 pages</li>
+            <li>Design sur mesure</li>
+            <li>Galerie photos</li>
+            <li>Formulaire de contact</li>
+            <li>Optimisation mobile</li>
+            <li>Référencement de base</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="mailto:webcreastudio.france@gmail.com?subject=Demande%20de%20devis%20-%20Site%20Premium%20599%E2%82%AC&body=Bonjour%20WebCr%C3%A9a%20Studio%2C%0A%0AJe%20souhaite%20des%20informations%20sur%20le%20Site%20Premium.%0A%0ANom%20de%20mon%20entreprise%20%3A%0AMon%20activit%C3%A9%20%3A%0AMon%20projet%20%3A%0A%0ACordialement.">
+            Demander un devis
+          </a>
+
+        </article>
+
+      </div>
+
+      <p class="note">
+        Tarifs de lancement indicatifs.
+        Hébergement, nom de domaine et
+        fonctionnalités spécifiques non inclus.
+        Un devis personnalisé est établi
+        selon les besoins de votre projet.
+      </p>
+
+    </section>
+
+    <!-- REALISATIONS -->
+    <section class="section" id="realisations">
+
+      <h2>Nos réalisations</h2>
+
+      <p class="intro">
+        Découvrez un exemple concret
+        de site internet réalisé.
+      </p>
+
+      <article class="portfolio-card">
+
+        <img
+          src="demonstrations/wr-plomberie/apercu.png"
+          alt="Capture du site WR Plomberie"
+          class="portfolio-image"
+          loading="lazy">
+
+        <h3>WR Plomberie</h3>
+
+        <p>
+          Création d'un site vitrine
+          pour une entreprise de plomberie.
+          Présentation des prestations,
+          des tarifs, des interventions
+          et des coordonnées.
+        </p>
+
+        <a
+          href="https://teddy85300.github.io/wr-plomberie/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn">
+          Visiter le site WR Plomberie ↗
+        </a>
+
+      </article>
+
+    </section>
+
+    <!-- AVANTAGES -->
+    <section class="section" id="avantages">
+
+      <h2>Pourquoi choisir WebCréa Studio ?</h2>
+
+      <div class="cards">
+
+        <article class="card">
+          <h3>Design moderne</h3>
+          <p>
+            Un site soigné et personnalisé
+            pour présenter votre entreprise
+            de manière professionnelle.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Adapté aux mobiles</h3>
+          <p>
+            Une navigation confortable
+            sur smartphone, tablette
+            et ordinateur.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Tarifs accessibles</h3>
+          <p>
+            Des formules claires pour
+            les artisans, commerçants
+            et petites entreprises.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+
+      <h2>Parlons de votre projet</h2>
+
+      <p class="intro">
+        Vous souhaitez créer un site internet
+        pour votre entreprise ?
+        Contactez WebCréa Studio
+        pour demander un devis personnalisé.
+      </p>
+
+      <div class="contact-box">
+
+        <h3>Contactez-nous par e-mail</h3>
+
+        <p>
+          Présentez-nous votre activité
+          et le site que vous souhaitez créer.
+        </p>
+
+        <a
+          href="mailto:webcreastudio.france@gmail.com"
+          class="contact-email">
+          webcreastudio.france@gmail.com
+        </a>
+
+        <p>
+          Cliquez ci-dessous pour préparer
+          votre demande de devis.
+        </p>
+
+        <a
+          href="mailto:webcreastudio.france@gmail.com?subject=Demande%20de%20devis%20-%20WebCr%C3%A9a%20Studio&body=Bonjour%2C%0A%0AJe%20souhaite%20obtenir%20un%20devis%20pour%20un%20site%20internet.%0A%0ANom%20de%20mon%20entreprise%20%3A%0AMon%20activit%C3%A9%20%3A%0AFormule%20souhait%C3%A9e%20%3A%0ADescription%20du%20projet%20%3A%0A%0ACordialement."
+          class="btn">
+          Demander un devis par e-mail
+        </a>
+
+        <p class="note">
+          Le bouton ouvre votre messagerie
+          pour préparer et envoyer votre demande.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer>
+    <p>
+      © 2026 WebCréa Studio —
+      Création de sites internet.
+    </p>
+  </footer>
+
+  <!-- FONCTIONNEMENT DU MENU MOBILE -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
