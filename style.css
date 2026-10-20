@@ -1,36 +1,53 @@
-/* Style du Logo WebÉCLAT */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #ffffff;
-}
+/* WebÉclat — feuille de style reconstruite pour le site existant */
+:root{--bg:#09090f;--panel:#171525;--panel2:#1b1830;--accent:#a855f7;--accent-light:#c084fc;--text:#f8f7ff;--muted:#c9c2d7;--border:#403052;--cyan:#38bdf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px max(20px,calc((100vw - 1160px)/2));background:#0e0c16;border-bottom:1px solid #2e213f}
+.logo{font-size:30px;font-weight:800;letter-spacing:-.7px;color:#fff}
+.logo span{color:var(--accent-light)}
+.site-navigation{background:#110e1b;border-bottom:1px solid #2c223a;padding:13px 18px}
+.nav-links{max-width:1100px;margin:auto;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.nav-links a{color:#e8e2f1;text-decoration:none;font-size:15px;font-weight:600}
+.nav-links a:hover{color:var(--accent-light)}
+.menu-toggle{display:none}
+.hero{position:relative;isolation:isolate;min-height:500px;padding:90px 18px 80px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(90deg,rgba(7,7,15,.88),rgba(10,7,22,.70)),url('images/accueil.jpg') center/cover no-repeat}
+.hero h1{font-size:clamp(34px,4.5vw,58px);line-height:1.15;max-width:930px;margin:0 auto 22px;font-weight:850;letter-spacing:-1px}
+.hero p{max-width:780px;margin:0 auto 22px;color:#eee9f4;font-size:18px}
+.btn{display:inline-block;border:1px solid #a45bea;border-radius:11px;background:linear-gradient(135deg,#9333ea,#6d28d9);color:#fff;text-decoration:none;padding:13px 23px;margin:6px;font-size:15px;font-weight:700;text-align:center;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.section{padding:76px 20px;text-align:center;background:#0b0a12}
+.section:nth-of-type(odd){background:#100e19}
+.section h2{font-size:clamp(28px,3vw,40px);line-height:1.2;margin:0 0 12px}
+.intro{color:var(--muted);max-width:770px;margin:0 auto 28px;font-size:17px}
+.cards{max-width:1120px;margin:35px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px;align-items:stretch}
+.card{display:flex;flex-direction:column;align-items:center;background:linear-gradient(180deg,#1d172b,#15111e);border:1px solid #453057;border-radius:19px;padding:30px 24px;box-shadow:0 10px 25px #0003}
+.card.featured{border-color:#a855f7;box-shadow:0 0 25px #7e22ce22}
+.card h3{font-size:24px;margin:0 0 12px}
+.price{font-size:42px;line-height:1.2;color:#c084fc;font-weight:800;margin-bottom:15px}
+.card ul{padding:0;list-style:none;width:100%;margin:0 0 20px}
+.card li{padding:10px 5px;border-bottom:1px solid #ffffff12;color:#e9e4ef}
+.card .btn{margin-top:auto}
+.card p{color:#d5cee1}
+.note{color:#aca3ba;font-size:13px;max-width:870px;margin:22px auto}
+.portfolio-card,.contact-box{background:#191526;border:1px solid #493456;border-radius:20px;box-shadow:0 8px 28px #0003}
+#avantages .card p{margin-top:0}
+#contact{background:#100d19}
+#contact .quote-form-wrap{max-width:680px;margin:35px auto 20px;background:#191526;border:1px solid #493456;border-radius:18px;padding:25px}
+#contact .quote-form-wrap h3{font-size:23px;margin:0}
+footer{background:#090810;border-top:1px solid #35263e;padding:22px;text-align:center;color:#c3b8ce}
+@media(max-width:768px){header{padding:10px 12px}.cards{grid-template-columns:1fr;max-width:500px}.section{padding:40px 14px}.hero{min-height:0;padding:36px 14px}.hero h1{font-size:28px}.hero p{font-size:14px}.card{padding:20px}.nav-links{gap:10px}}
 
-.logo-icon {
-  display: block;
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
+/* WebÉCLAT : image complète officielle, sans recréer le W ou le lettrage */
+header .logo{display:flex!important;align-items:center!important;flex:0 1 auto;min-width:0;line-height:1!important}
+header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-width:100%;height:auto;object-fit:contain}
+@media(max-width:768px){
+  header{gap:5px!important}
+  header .logo{flex:1 1 auto!important;min-width:0!important}
+  header .logo .brand-full-logo{width:100%;max-width:245px;height:auto}
+  header .language-wrap{flex:0 0 auto!important;margin-left:auto!important}
+  header .language-wrap select{width:clamp(94px,24vw,118px)!important;max-width:118px!important}
+  header .menu-toggle{flex:0 0 39px!important}
 }
-
-.logo-text {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-}
-
-.logo-text span {
-  color: #a855f7;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .logo-text {
-    font-size: 20px;
-  }
-  .logo-icon {
-    width: 36px;
-    height: 36px;
-  }
-}
+@media(max-width:390px){header .logo .brand-full-logo{max-width:205px}header .language-wrap select{width:99px!important}}
