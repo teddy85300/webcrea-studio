@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -277,8 +278,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 /* Finitions de la version mobile : bureau inchangé */
 @media (max-width: 768px) {
   #services .card ul {list-style:none!important;padding:0!important;margin:9px 0 12px!important;}
-  #services .card ul li {position:relative!important;text-align:left!important;padding:7px 8px 7px 30px!important;line-height:1.35!important;}
-  #services .card ul li::before {content:"✓";position:absolute;left:7px;top:7px;color:#7be0c0;font-weight:800;}
+  #services .card ul li {position:static!important;text-align:center!important;padding:7px 8px!important;line-height:1.45!important;}
+  #services .card ul li::before {content:none!important;display:none!important;}
   #services .card .btn,#maintenance .card .btn {min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
   #services .card h3,#maintenance .card h3 {line-height:1.22!important;}
   #maintenance .card p {line-height:1.5!important;}
@@ -290,7 +291,32 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 @media (max-width:360px) {
   .hero>a.btn {font-size:11px!important;padding:10px 7px!important;}
 }
-</style></head>
+</style><style>/* Finitions WebCréa Studio : confort, lisibilité et conversion */
+:root{color-scheme:dark}
+button,select,input,textarea{font-family:inherit}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d8b4fe;outline-offset:3px}
+.btn,.quick-price,.menu-toggle{touch-action:manipulation}
+.card,.portfolio-card,.contact-box{overflow-wrap:anywhere}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.16)}
+@media(max-width:768px){
+  .hero{padding-bottom:24px!important}
+  .hero h1{max-width:28ch!important}
+  .hero>a.btn{min-height:43px!important;display:inline-flex!important;align-items:center;justify-content:center}
+  section#services article.card,section#maintenance article.card{border-radius:16px!important}
+  section#services article.card ul li{font-size:14px!important;line-height:1.45!important}
+  section#services article.card .btn,section#maintenance article.card .btn{width:100%;margin-left:0!important;margin-right:0!important}
+  #avantages .card{padding:17px!important}
+  #avantages .card h3{font-size:19px!important;margin-bottom:6px!important}
+  #avantages .card p{font-size:14px!important;line-height:1.5!important;margin:0!important}
+  #realisations .portfolio-card{margin-top:15px!important}
+  #realisations .portfolio-card h3{font-size:22px!important;margin:12px 0 6px!important}
+  #contact .quote-form-wrap{max-width:650px;margin:auto}
+  #contact .quote-form{gap:11px}
+  #contact .contact-box{margin-top:22px}
+  .section .intro{font-size:14px!important;line-height:1.45!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style><meta content="#09090f" name="theme-color"/></head>
 <body>
 <!-- EN-TETE -->
 <header>
@@ -522,9 +548,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
           Cliquez ci-dessous pour préparer
           votre demande de devis.
         </p>
-<a class="btn" data-focus-form="true" data-i18n="contactButton" href="#contact">
-          Demander un devis par e-mail
-        </a>
+<a class="btn" data-focus-form="true" data-i18n="contactButton" href="#contact">Remplir le formulaire</a>
 <p class="note" data-i18n="contactNote">
           Le bouton ouvre votre messagerie
           pour préparer et envoyer votre demande.
@@ -597,5 +621,14 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
     if (field) setTimeout(() => field.focus({preventScroll:true}), 300);
   });
 });
-</script></body>
+</script><script>/* Amélioration de l'accessibilité du menu */
+(function(){
+ const btn=document.getElementById('menuToggle');
+ const links=document.getElementById('navLinks');
+ if(!btn||!links)return;
+ function sync(){btn.setAttribute('aria-label',links.classList.contains('open')?'Fermer le menu':'Ouvrir le menu');}
+ btn.addEventListener('click',sync);
+ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',sync));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
+})();</script></body>
 </html>
