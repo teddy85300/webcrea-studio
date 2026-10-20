@@ -245,6 +245,34 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 }
 #quote-success{display:none;max-width:650px;margin:14px auto;padding:15px;border:1px solid #8c45ff;border-radius:12px;background:#221631;color:#fff;text-align:center}
 #quote-success:target{display:block}
+</style><style>
+/* Optimisation mobile 2026 : aucune modification de l'affichage ordinateur */
+@media (max-width:768px) {
+  header {padding:9px 12px!important;gap:7px!important;min-height:60px!important;}
+  header .logo {font-size:clamp(17px,4.3vw,22px)!important;letter-spacing:-.5px!important;}
+  header .language-wrap {margin-left:auto!important;min-width:0!important;}
+  header .language-wrap select {width:clamp(105px,28vw,138px)!important;max-width:138px!important;font-size:12px!important;padding:8px 3px!important;}
+  header .menu-toggle {display:flex!important;flex:0 0 39px!important;width:39px!important;height:39px!important;min-width:39px!important;padding:0!important;border:1px solid #34415d!important;border-radius:10px!important;background:#142137!important;font-size:21px!important;align-items:center!important;justify-content:center!important;line-height:1!important;}
+  .site-navigation {min-height:0!important;border:0!important;}
+  .site-navigation .nav-links {position:relative!important;z-index:15!important;}
+  .site-navigation .nav-links a {padding:12px 16px!important;font-size:14px!important;}
+  .hero {padding:21px 12px 22px!important;}
+  .hero h1 {font-size:clamp(22px,5.45vw,28px)!important;line-height:1.15!important;margin:0 auto 9px!important;max-width:540px!important;letter-spacing:-.45px!important;}
+  .hero .hero-short {font-size:13px!important;line-height:1.35!important;margin:0 auto 10px!important;}
+  .quick-prices {gap:7px!important;margin:10px auto 9px!important;}
+  .quick-price {min-height:60px!important;padding:9px 5px!important;border-radius:12px!important;gap:3px!important;}
+  .quick-price strong {font-size:clamp(11px,3.4vw,15px)!important;}
+  .quick-price small {font-size:9px!important;}
+  .hero>a.btn {padding:9px 10px!important;margin:3px 2px!important;font-size:12px!important;border-radius:11px!important;}
+  section#services,section#maintenance {padding:18px 12px!important;}
+  section#services>h2,section#maintenance>h2 {font-size:22px!important;margin:0 0 5px!important;}
+  section#services>p.intro,section#maintenance>p.intro {font-size:12.5px!important;margin:0 auto 9px!important;}
+  section#services article.card,section#maintenance article.card {padding:12px!important;}
+  section#services article.card h3,section#maintenance article.card h3 {font-size:18px!important;}
+  section#services article.card .price,section#maintenance article.card .price {font-size:27px!important;margin-bottom:5px!important;}
+  section#services article.card ul li,section#maintenance article.card ul li {padding:6px 3px!important;font-size:13.5px!important;}
+}
+@media(max-width:360px){header{padding:8px!important;gap:5px!important}header .logo{font-size:16px!important}header .language-wrap select{width:103px!important}header .menu-toggle{flex-basis:36px!important;width:36px!important;min-width:36px!important}}
 </style></head>
 <body>
 <!-- EN-TETE -->
@@ -252,13 +280,10 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 <div class="logo">
       Web<span>Créa</span> Studio
     </div>
-<div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div></header>
+<div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header>
 <!-- MENU -->
 <nav aria-label="Navigation principale" class="site-navigation">
-<button aria-controls="navLinks" aria-expanded="false" class="menu-toggle" id="menuToggle" type="button">
-<span aria-hidden="true">☰</span>
-      Menu
-    </button>
+
 <div class="nav-links" id="navLinks">
 <a data-i18n="home" href="#accueil">Accueil</a>
 <a data-i18n="offers" href="#services">Nos offres</a>
