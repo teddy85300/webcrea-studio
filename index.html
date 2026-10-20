@@ -434,7 +434,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 </div>
 </section>
 <!-- CONTACT -->
-<section class="section contact" id="contact"><div id="quote-success" role="status"><strong>Merci ! Votre demande de devis a été envoyée.</strong><p>Nous vous répondrons par e-mail dès que possible.</p></div>
+<section class="section contact" id="contact">
 <h2 data-i18n="contactTitle">Parlons de votre projet</h2>
 <p class="intro" data-i18n="contactDesc">
         Vous souhaitez créer un site internet
@@ -446,7 +446,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 <h3 data-i18n="formTitle">Demandez votre devis en ligne</h3>
 <p data-i18n="formIntro">Remplissez ce formulaire : aucun logiciel de messagerie nécessaire.</p>
 <form action="https://formsubmit.co/webcreastudio.france@gmail.com" class="quote-form" method="POST">
-<input name="_next" type="hidden" value="https://teddy85300.github.io/webcrea-studio/?merci=1#contact"/>
+<input name="_next" type="hidden" value="https://teddy85300.github.io/webcrea-studio/merci.html"/>
 <input name="_subject" type="hidden" value="Nouvelle demande de devis - WebCréa Studio"/>
 <input name="_captcha" type="hidden" value="true"/>
 <input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
@@ -550,13 +550,5 @@ langSelect.addEventListener("change", e => setLanguage(e.target.value));
 let saved = "fr";
 try { saved = localStorage.getItem("webcrea-language") || "fr"; } catch(e) {}
 setLanguage(translations[saved] ? saved : "fr");
-</script><script>
-// Affiche une confirmation si FormSubmit redirige vers la page après envoi.
-if(new URLSearchParams(window.location.search).get('merci')==='1'){
-  document.addEventListener('DOMContentLoaded',()=>{
-    const box=document.getElementById('quote-success');
-    if(box){box.style.display='block';}
-  });
-}
 </script></body>
 </html>
