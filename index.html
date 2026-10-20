@@ -327,19 +327,22 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 .quote-choice-panel .quote-secondary{background:#242138;border-color:#796397}
 .quote-choice-close{position:absolute;right:10px;top:8px;width:38px;height:38px;border:0;border-radius:10px;background:transparent;color:#fff;font-size:27px;cursor:pointer}
 @media(max-width:380px){.quote-choice-panel{padding:22px 15px}.quote-choice-panel h2{font-size:20px}}
-</style><style>
-/* Identité WebÉclat : logo et nom uniquement, reste du design conservé */
-header .logo{display:flex;align-items:center;gap:12px;text-align:left;font-size:clamp(22px,3vw,34px);line-height:1.1;white-space:nowrap}
-header .logo .brand-name{font-weight:900;letter-spacing:-1px;color:#fff}
-header .logo .brand-name span{color:#bd32ff}
-header .logo .brand-symbol{flex:0 0 auto;width:58px;height:58px;display:grid;place-items:center;border:2px solid #d67bff;border-radius:50%;background:radial-gradient(circle at 40% 30%,#582274 0%,#180b29 48%,#07070f 75%);box-shadow:0 0 0 3px #170d23,0 0 16px #a855f788,inset 0 0 12px #b64cf755;color:#fff;font-size:38px;font-weight:900;letter-spacing:-5px;text-shadow:2px 2px 0 #a855f7,0 0 8px #b94cff}
-@media(max-width:768px){header .logo{gap:8px!important;font-size:clamp(17px,4.4vw,24px)!important}header .logo .brand-symbol{width:42px;height:42px;font-size:28px}}
-@media(max-width:380px){header .logo{font-size:16px!important;gap:6px!important}header .logo .brand-symbol{width:36px;height:36px;font-size:24px}}
-</style></head>
+</style><style id="webeclat-brand">
+/* Identité WebÉclat : logo intégré, aucun fichier image nécessaire */
+header .logo{display:flex;align-items:center;gap:11px}
+header .logo .brand-mark{display:inline-flex;align-items:center;justify-content:center;flex:0 0 43px;width:43px;height:43px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#c084fc 0%,#8738df 48%,#411074 100%);border:2px solid #cfa0ff;box-shadow:0 0 16px #a855f777,inset 0 0 8px #ffffff33;color:#fff;font-weight:900;font-size:25px;line-height:1;letter-spacing:-2px}
+header .logo .brand-name{white-space:nowrap}
+header .logo .brand-name span{color:#c084fc}
+@media(max-width:768px){header .logo{gap:6px!important}header .logo .brand-mark{flex-basis:30px;width:30px;height:30px;font-size:18px}header .logo .brand-name{font-size:clamp(16px,4vw,22px)}}
+@media(max-width:370px){header .logo .brand-mark{flex-basis:26px;width:26px;height:26px;font-size:16px}header .logo .brand-name{font-size:15px}}
+</style>
+</head>
 <body>
 <!-- EN-TETE -->
 <header>
-<div class="logo"><span class="brand-symbol" aria-hidden="true">W</span><span class="brand-name">Web<span>ÉCLAT</span></span></div>
+<div class="logo">
+      <span class="brand-mark" aria-hidden="true">W</span><span class="brand-name">Web<span>Éclat</span></span>
+    </div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header>
 <!-- MENU -->
 <nav aria-label="Navigation principale" class="site-navigation">
@@ -627,12 +630,12 @@ function setLanguage(lang) {
     if (typeof translated === "string") el.textContent = translated;
   });
   langSelect.value = lang;
-  try { localStorage.setItem("webeclat-language", lang); } catch(e) {}
+  try { localStorage.setItem("webcrea-language", lang); } catch(e) {}
   document.title = lang === "fr" ? "WebÉclat | Création de sites internet" : "WebÉclat | Website design";
 }
 langSelect.addEventListener("change", e => setLanguage(e.target.value));
 let saved = "fr";
-try { saved = localStorage.getItem("webeclat-language") || "fr"; } catch(e) {}
+try { saved = localStorage.getItem("webcrea-language") || "fr"; } catch(e) {}
 setLanguage(translations[saved] ? saved : "fr");
 </script><script>
 // Chaque offre propose le formulaire ou un e-mail déjà préparé.
