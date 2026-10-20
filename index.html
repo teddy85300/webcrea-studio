@@ -316,7 +316,18 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   .section .intro{font-size:14px!important;line-height:1.45!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-</style><meta content="#09090f" name="theme-color"/></head>
+</style><meta content="#09090f" name="theme-color"/><style>
+/* Choix du mode de demande de devis */
+.quote-choice[hidden]{display:none!important}
+.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78)}
+.quote-choice-panel{position:relative;width:min(100%,440px);max-height:90vh;overflow:auto;padding:26px 20px;background:#171525;border:1px solid #8d48ec;border-radius:18px;color:#fff;text-align:center;box-shadow:0 20px 70px #0009}
+.quote-choice-panel h2{font-size:23px;line-height:1.25;margin:8px 26px 12px}
+.quote-choice-panel p{color:#d8d4e5;line-height:1.5;margin:0 0 18px}
+.quote-choice-panel .btn{display:block;width:100%;margin:10px 0;padding:13px 12px;font-size:15px;min-height:48px}
+.quote-choice-panel .quote-secondary{background:#242138;border-color:#796397}
+.quote-choice-close{position:absolute;right:10px;top:8px;width:38px;height:38px;border:0;border-radius:10px;background:transparent;color:#fff;font-size:27px;cursor:pointer}
+@media(max-width:380px){.quote-choice-panel{padding:22px 15px}.quote-choice-panel h2{font-size:20px}}
+</style></head>
 <body>
 <!-- EN-TETE -->
 <header>
@@ -556,6 +567,16 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </div>
 </section>
 </main>
+<div id="quoteChoice" class="quote-choice" hidden>
+  <div class="quote-choice-panel" role="dialog" aria-modal="true" aria-labelledby="quoteChoiceTitle" aria-describedby="quoteChoiceText">
+    <button type="button" id="quoteChoiceClose" class="quote-choice-close" aria-label="Fermer">×</button>
+    <h2 id="quoteChoiceTitle">Demander un devis</h2>
+    <p id="quoteChoiceText">Choisissez comment envoyer votre demande.</p>
+    <a href="#contact" id="quoteChoiceForm" class="btn">Remplir le formulaire</a>
+    <a href="mailto:webcreastudio.france@gmail.com" id="quoteChoiceEmail" class="btn quote-secondary">Envoyer un e-mail préparé</a>
+  </div>
+</div>
+
 <!-- PIED DE PAGE -->
 <footer>
 <p data-i18n="footer">
@@ -608,13 +629,66 @@ let saved = "fr";
 try { saved = localStorage.getItem("webcrea-language") || "fr"; } catch(e) {}
 setLanguage(translations[saved] ? saved : "fr");
 </script><script>
-// Les boutons des offres remplissent le formulaire sans ouvrir la messagerie.
-document.querySelectorAll('[data-select-plan]').forEach(link => {
-  link.addEventListener('click', () => {
-    const select = document.querySelector('select[name="Formule"]');
-    if (select) select.value = link.dataset.selectPlan;
+// Chaque offre propose le formulaire ou un e-mail déjà préparé.
+(function () {
+  const overlay = document.getElementById('quoteChoice');
+  const title = document.getElementById('quoteChoiceTitle');
+  const description = document.getElementById('quoteChoiceText');
+  const formButton = document.getElementById('quoteChoiceForm');
+  const emailButton = document.getElementById('quoteChoiceEmail');
+  const closeButton = document.getElementById('quoteChoiceClose');
+  const offerSelect = document.querySelector('select[name="Formule"]');
+  let previousFocus = null;
+  const words = {
+    fr:['Demander un devis','Choisissez comment envoyer votre demande.','Remplir le formulaire','Envoyer un e-mail préparé','Bonjour,\n\nJe souhaite recevoir un devis pour la formule : ','\n\nVoici quelques informations sur mon projet :\n\n\nMerci de me recontacter.\n\nCordialement,'],
+    en:['Request a quote','How would you like to send your request?','Complete the form','Open a pre-filled email','Hello,\n\nI would like a quote for: ','\n\nDetails about my project:\n\n\nPlease get back to me.\n\nKind regards,'],
+    es:['Solicitar presupuesto','¿Cómo deseas enviar tu solicitud?','Rellenar el formulario','Abrir correo preparado','Hola,\n\nQuisiera un presupuesto para: ','\n\nDetalles de mi proyecto:\n\n\nGracias.\n\nSaludos,'],
+    de:['Angebot anfordern','Wie möchten Sie Ihre Anfrage senden?','Formular ausfüllen','Vorbereitete E-Mail öffnen','Guten Tag,\n\nich möchte ein Angebot für: ','\n\nAngaben zu meinem Projekt:\n\n\nVielen Dank.\n\nMit freundlichen Grüßen,'],
+    ru:['Запросить расчёт','Как вы хотите отправить запрос?','Заполнить форму','Открыть готовое письмо','Здравствуйте!\n\nПрошу рассчитать стоимость пакета: ','\n\nИнформация о проекте:\n\n\nСпасибо!\n\nС уважением,']
+  };
+  function closeDialog() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    if (previousFocus) previousFocus.focus();
+  }
+  document.querySelectorAll('[data-select-plan]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const plan = link.dataset.selectPlan;
+      const lang = document.documentElement.lang;
+      const t = words[lang] || words.fr;
+      if (offerSelect) offerSelect.value = plan;
+      title.textContent = t[0] + ' — ' + plan;
+      description.textContent = t[1];
+      formButton.textContent = t[2];
+      emailButton.textContent = t[3];
+      const subject = 'Demande de devis WebCréa Studio - ' + plan;
+      emailButton.href = 'mailto:webcreastudio.france@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(t[4] + plan + t[5]);
+      previousFocus = link;
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    });
   });
-});
+  formButton.addEventListener('click', () => {
+    closeDialog();
+    const field = document.querySelector('.quote-form input[name="Nom"]');
+    if (field) setTimeout(() => field.focus({preventScroll:true}), 350);
+  });
+  emailButton.addEventListener('click', closeDialog);
+  closeButton.addEventListener('click', closeDialog);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeDialog(); });
+  document.addEventListener('keydown', e => {
+    if (overlay.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeDialog(); }
+    if (e.key === 'Tab') {
+      const items = [closeButton,formButton,emailButton];
+      const index = items.indexOf(document.activeElement);
+      if (e.shiftKey && index <= 0) { e.preventDefault(); emailButton.focus(); }
+      else if (!e.shiftKey && index === items.length - 1) { e.preventDefault(); closeButton.focus(); }
+    }
+  });
+})();
 document.querySelectorAll('[data-focus-form]').forEach(link => {
   link.addEventListener('click', () => {
     const field = document.querySelector('.quote-form input[name="Nom"]');
