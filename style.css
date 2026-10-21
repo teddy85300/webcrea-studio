@@ -90,3 +90,14 @@ header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-wi
   section.hero .quick-price strong{font-size:15px!important}
   section.hero>a.btn{font-size:12px!important;padding:10px 9px!important}
 }
+
+/* Accueil mobile : occupe au minimum l'écran restant après l'en-tête.
+   Le contenu peut dépasser sur les petits téléphones sans être coupé. */
+@media(max-width:768px){
+  body{--webeclat-header-height:100px}
+  section.hero{
+    min-height:calc(100vh - var(--webeclat-header-height))!important;
+    min-height:calc(100svh - var(--webeclat-header-height))!important;
+    justify-content:center!important;
+  }
+}
