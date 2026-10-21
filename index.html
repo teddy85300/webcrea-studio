@@ -586,6 +586,39 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section.hero > a.btn { font-size: 11px !important; padding: 9px 4px !important; }
 }
 </style>
+<style id="webeclat-hero-viewport-fix-2026">
+/* Correctif final : placé après les anciens styles intégrés pour éviter les conflits. */
+@media (max-width: 768px) {
+  section.hero#accueil {
+    box-sizing: border-box !important;
+    min-height: calc(100vh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-content: center !important;
+    justify-items: stretch !important;
+    column-gap: 6px !important;
+    row-gap: 0 !important;
+    padding: 24px 14px 30px !important;
+  }
+  section.hero#accueil > h1,
+  section.hero#accueil > p,
+  section.hero#accueil > .quick-prices {
+    grid-column: 1 / -1 !important;
+  }
+  section.hero#accueil > a.btn {
+    display: inline-flex !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 3px 0 !important;
+    padding: 10px 5px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- EN-TETE -->
