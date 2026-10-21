@@ -1,4 +1,4 @@
-/* WebÉclat — feuille de style reconstruite pour le site existant */
+/* WebÉclat — feuille de style complète, avec correctifs responsive */
 :root{--bg:#09090f;--panel:#171525;--panel2:#1b1830;--accent:#a855f7;--accent-light:#c084fc;--text:#f8f7ff;--muted:#c9c2d7;--border:#403052;--cyan:#38bdf8}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,12 +37,17 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 #contact .quote-form-wrap{max-width:680px;margin:35px auto 20px;background:#191526;border:1px solid #493456;border-radius:18px;padding:25px}
 #contact .quote-form-wrap h3{font-size:23px;margin:0}
 footer{background:#090810;border-top:1px solid #35263e;padding:22px;text-align:center;color:#c3b8ce}
-@media(max-width:768px){header{padding:10px 12px}.cards{grid-template-columns:1fr;max-width:500px}.section{padding:40px 14px}.hero{min-height:0;padding:36px 14px}.hero h1{font-size:28px}.hero p{font-size:14px}.card{padding:20px}.nav-links{gap:10px}}
-
-/* WebÉCLAT : image complète officielle, sans recréer le W ou le lettrage */
 header .logo{display:flex!important;align-items:center!important;flex:0 1 auto;min-width:0;line-height:1!important}
 header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-width:100%;height:auto;object-fit:contain}
 @media(max-width:768px){
+  header{padding:10px 12px}
+  .cards{grid-template-columns:1fr;max-width:500px}
+  .section{padding:40px 14px}
+  .hero{min-height:0;padding:36px 14px}
+  .hero h1{font-size:28px}
+  .hero p{font-size:14px}
+  .card{padding:20px}
+  .nav-links{gap:10px}
   header{gap:5px!important}
   header .logo{flex:1 1 auto!important;min-width:0!important}
   header .logo .brand-full-logo{width:100%;max-width:245px;height:auto}
@@ -51,3 +56,37 @@ header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-wi
   header .menu-toggle{flex:0 0 39px!important}
 }
 @media(max-width:390px){header .logo .brand-full-logo{max-width:205px}header .language-wrap select{width:99px!important}}
+
+/* Correctifs smartphone : ciblage précis des blocs HTML existants.
+   Ces règles utilisent !important car index.html contient déjà des styles intégrés. */
+@media(max-width:768px){
+  html,body{max-width:100%;overflow-x:clip}
+  header{gap:7px!important;padding:10px 10px!important}
+  header .logo .brand-full-logo{max-width:225px!important;mix-blend-mode:normal!important}
+  header .language-wrap select{width:96px!important;max-width:96px!important;min-width:0!important}
+  header .menu-toggle{flex:0 0 42px!important;width:42px!important;min-width:42px!important}
+  section.hero{padding:26px 16px 30px!important}
+  section.hero h1{font-size:clamp(24px,6vw,30px)!important;max-width:25ch!important;line-height:1.18!important}
+  section.hero .hero-short{font-size:15px!important;line-height:1.5!important;max-width:36ch!important}
+  section.hero .quick-prices{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:11px!important;width:100%!important;max-width:420px!important;margin:18px auto!important}
+  section.hero .quick-price{display:flex!important;min-width:0!important;width:100%!important;min-height:82px!important;padding:12px 24px!important;gap:3px!important}
+  section.hero .quick-price strong{display:block!important;max-width:100%!important;white-space:normal!important;overflow-wrap:normal!important;font-size:clamp(16px,4.3vw,19px)!important;line-height:1.35!important;text-align:center!important}
+  section.hero .quick-price small{display:inline!important;font-size:11px!important;white-space:nowrap!important}
+  section.hero .quick-arrow{right:12px!important;top:10px!important}
+  section.hero>a.btn{min-height:46px!important;padding:11px 13px!important;margin:5px 3px!important;font-size:14px!important}
+  section#services,section#maintenance,section#realisations,section#avantages,section#contact{padding:38px 16px!important}
+  section#services .cards,section#maintenance .cards{gap:16px!important}
+  section#services article.card,section#maintenance article.card{padding:22px 18px!important}
+  section#services article.card .price,section#maintenance article.card .price{font-size:36px!important}
+  section#services article.card ul li,section#maintenance article.card ul li{font-size:15px!important;line-height:1.45!important}
+  #contact .quote-form-wrap{padding:20px 15px!important}
+  .quote-form input,.quote-form select,.quote-form textarea{max-width:100%!important;font-size:16px!important}
+}
+@media(max-width:370px){
+  header{padding:8px 7px!important;gap:4px!important}
+  header .logo .brand-full-logo{max-width:185px!important}
+  header .language-wrap select{width:87px!important;max-width:87px!important}
+  header .menu-toggle{flex:0 0 39px!important;width:39px!important;min-width:39px!important}
+  section.hero .quick-price strong{font-size:15px!important}
+  section.hero>a.btn{font-size:12px!important;padding:10px 9px!important}
+}
