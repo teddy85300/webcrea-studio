@@ -422,6 +422,41 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section.hero .quick-price { padding:12px 4px!important; }
 }
 </style>
+<style id="webeclat-mobile-final-2026">
+/* Ajustements finaux pour smartphone uniquement ; design ordinateur inchangé. */
+@media (max-width: 768px) {
+  section.hero .quick-prices {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 410px !important;
+    gap: 10px !important;
+    margin: 16px auto !important;
+  }
+  section.hero .quick-price {
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 12px 26px !important;
+  }
+  section.hero .quick-price strong {
+    display: block !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    font-size: clamp(15px, 4.2vw, 19px) !important;
+    line-height: 1.4 !important;
+  }
+  section.hero .quick-price small {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+  section.hero .quick-arrow { right: 12px !important; top: 10px !important; }
+  section.hero h1 { max-width: 26ch !important; }
+  section.hero>a.btn { min-height: 46px !important; }
+  section#services article.card .price,
+  section#maintenance article.card .price { font-size: 36px !important; }
+}
+</style>
 </head>
 <body>
 <!-- EN-TETE -->
@@ -454,7 +489,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         tablette et smartphone.
       </p><p class="hero-short" data-i18n="heroShort">Des sites modernes pour artisans, commerçants et indépendants, adaptés à tous les écrans.</p><div aria-label="Accès rapide aux tarifs" class="quick-prices">
 <a class="quick-price" href="#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
-<a class="quick-price" href="#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>OFFERT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
 </div>
 <a class="btn" data-i18n="discover" href="#services">
         Découvrir nos offres
