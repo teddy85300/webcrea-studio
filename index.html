@@ -457,6 +457,91 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section#maintenance article.card .price { font-size: 36px !important; }
 }
 </style>
+
+<style id="webeclat-mobile-carousel-2026">
+/* Ajustements mobiles uniquement : accueil pleine hauteur et cartes à glisser. */
+@media (max-width: 768px) {
+  section.hero {
+    min-height: calc(100svh - 72px) !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 14px 26px !important;
+  }
+  section.hero h1 { font-size: clamp(23px, 5.7vw, 30px) !important; }
+  section.hero .quick-prices {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 410px !important;
+    gap: 9px !important;
+    margin: 12px auto !important;
+  }
+  section.hero .quick-price { min-height: 67px !important; padding: 10px 20px !important; }
+  section.hero .quick-price strong {
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    font-size: clamp(14px, 3.8vw, 18px) !important;
+  }
+  section.hero .quick-price small { white-space: nowrap !important; }
+  section.hero > a.btn { min-height: 44px !important; }
+  /* Les cartes restent côte à côte sur ordinateur ; glissement natif sur téléphone. */
+  section#services .cards,
+  section#maintenance .cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    width: calc(100% + 16px) !important;
+    max-width: none !important;
+    margin: 15px -8px 0 !important;
+    padding: 3px 8px 18px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 8px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  section#services .cards > article.card,
+  section#maintenance .cards > article.card {
+    flex: 0 0 min(82vw, 340px) !important;
+    width: min(82vw, 340px) !important;
+    min-width: min(82vw, 340px) !important;
+    max-width: min(82vw, 340px) !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: start;
+    padding: 20px 17px !important;
+  }
+  section#services .card .price,
+  section#maintenance .card .price { font-size: 33px !important; }
+  section#services, section#maintenance { overflow: hidden; }
+  section#services > p.intro::after,
+  section#maintenance > p.intro::after {
+    content: "  ← Faites glisser les offres →";
+    display: block;
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  section#realisations .portfolio-card { padding: 15px !important; }
+}
+@media (max-width: 370px) {
+  section.hero { padding: 13px 10px 18px !important; }
+  section.hero .quick-price { min-height: 62px !important; }
+  section.hero .quick-price strong { font-size: 13px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  section#services .cards, section#maintenance .cards { scroll-behavior: auto !important; }
+}
+</style>
 </head>
 <body>
 <!-- EN-TETE -->
