@@ -619,6 +619,19 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   }
 }
 </style>
+<style id="webeclat-hero-balance-2026">
+/* Équilibre vertical sur les téléphones assez hauts : remonte la limite basse visuelle
+   en décalant doucement le contenu, sans toucher aux cartes ni au bureau. */
+@media (max-width: 768px) and (min-height: 700px) {
+  section.hero#accueil > h1,
+  section.hero#accueil > p,
+  section.hero#accueil > .quick-prices,
+  section.hero#accueil > a.btn {
+    position: relative !important;
+    top: clamp(16px, 4.5svh, 42px) !important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- EN-TETE -->
