@@ -661,6 +661,27 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 .about-card h2{color:#d8b4fe;margin-top:0}
 .site-navigation .nav-links a[aria-current="page"]{color:#d8b4fe;text-decoration:underline;text-underline-offset:6px}
 @media(max-width:768px){.page-intro{padding:36px 16px 12px}.page-intro h1{font-size:29px}.page-intro p{font-size:15px}.page-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px auto 28px;padding:0 12px}.page-shortcuts a{padding:17px 12px}.page-shortcuts strong{font-size:15px}.page-shortcuts span{font-size:12px}.about-card{margin:15px 12px;padding:20px}.section{padding:32px 14px!important}section.hero#accueil{min-height:0!important;display:block!important;padding:35px 14px 26px!important}section.hero#accueil>.quick-prices{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:520px!important}section.hero#accueil>.quick-prices .quick-price{min-height:75px!important;padding:10px 5px!important}section.hero#accueil>.quick-prices .quick-price strong{font-size:clamp(11px,3.2vw,15px)!important}section.hero#accueil > h1,section.hero#accueil > p,section.hero#accueil > .quick-prices,section.hero#accueil > a.btn{position:static!important;top:auto!important}}
+</style><style id="webeclat-accueil-mobile-elegant">
+.mobile-quick-value{display:none}
+@media(max-width:768px){
+ section.hero#accueil{min-height:0!important;padding:23px 14px 21px!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:9px!important;align-content:start!important}
+ section.hero#accueil>h1{font-size:clamp(23px,5.7vw,30px)!important;line-height:1.16!important;margin:0 auto 10px!important}
+ section.hero#accueil>.hero-short{font-size:14px!important;line-height:1.42!important;margin:0 auto 12px!important}
+ section.hero#accueil>.quick-prices{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin:10px auto 14px!important;width:100%!important;max-width:520px!important}
+ section.hero#accueil .quick-price{min-height:72px!important;padding:10px 8px!important;gap:4px!important}
+ section.hero#accueil .quick-price>strong:not(.mobile-quick-value){display:none!important}
+ section.hero#accueil .quick-price>.mobile-quick-value{display:block!important;font-size:clamp(17px,4.4vw,22px)!important;line-height:1.15!important;white-space:nowrap!important}
+ section.hero#accueil .quick-price>span:first-child{font-size:12px!important}
+ section.hero#accueil>a.btn{min-height:44px!important;width:100%!important;max-width:none!important;margin:2px 0!important;padding:9px 5px!important;font-size:clamp(11px,3.1vw,14px)!important;line-height:1.2!important;border-radius:12px!important}
+ section.hero#accueil>a.btn[href^="offres"]{background:rgba(27,24,48,.85)!important;border:1px solid #a855f7!important;color:#f8f7ff!important}
+ section.hero#accueil>a.btn[href^="contact"]{background:#8729d9!important;border:1px solid #a855f7!important;color:white!important;font-weight:700!important}
+ .page-shortcuts{gap:9px!important;margin:12px auto 25px!important;padding:0 12px!important}
+ .page-shortcuts a{min-height:112px!important;padding:13px 12px!important;gap:7px!important;position:relative!important}
+ .page-shortcuts a::after{content:'↗';position:absolute;right:11px;top:10px;color:#c084fc;font-size:15px}
+ .page-shortcuts strong{font-size:clamp(13px,3.6vw,16px)!important;padding-right:15px!important;line-height:1.3!important}
+ .page-shortcuts span{font-size:12px!important;line-height:1.35!important}
+}
+@media(max-width:370px){.page-shortcuts a{padding:12px 9px!important}.page-shortcuts span{font-size:11px!important}}
 </style></head><body><header>
 <div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-complet.png"/></div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
@@ -684,8 +705,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         accessibles sur ordinateur,
         tablette et smartphone.
       </p><p class="hero-short" data-i18n="heroShort">Des sites modernes pour artisans, commerçants et indépendants, adaptés à tous les écrans.</p><div aria-label="Accès rapide aux tarifs" class="quick-prices">
-<a class="quick-price" href="offres.html#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
-<a class="quick-price" href="maintenance.html#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="offres.html#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><strong class="mobile-quick-value">Dès 89 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="maintenance.html#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><strong class="mobile-quick-value">Dès 0 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
 </div>
 <a class="btn" data-i18n="discover" href="offres.html#services">
         Découvrir nos offres
@@ -854,4 +875,9 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',sync));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
 })();</script>
-<script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script></body></html>
+<script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script><script id="mobile-price-translations">(function(){
+const values={fr:['Dès 89 €','Dès 0 €'],en:['From €89','From €0'],es:['Desde 89 €','Desde 0 €'],de:['Ab 89 €','Ab 0 €'],ru:['От 89 €','От 0 €']};
+const select=document.getElementById('languageSelect');const nodes=document.querySelectorAll('.mobile-quick-value');
+function update(){const a=values[select?.value]||values.fr;nodes.forEach((n,i)=>n.textContent=a[i]);}
+if(select){select.addEventListener('change',update);update();}
+})();</script></body></html>
