@@ -791,6 +791,13 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   .page-shortcuts { margin-top:20px!important; }
 }
 </style>
+<style id="webeclat-footer-legal-links">
+.footer-legal-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:7px;font-size:12px;line-height:1.4}
+.footer-legal-links a{color:#c9c2d7;text-decoration:underline;text-underline-offset:3px}
+.footer-legal-links a:hover,.footer-legal-links a:focus-visible{color:#d8b4fe}
+.footer-legal-links span{color:#857b95}
+@media(max-width:768px){.footer-legal-links{font-size:10px;gap:6px;margin-top:5px}.footer-legal-links a{padding:3px 0}}
+</style>
 </head><body><header>
 <div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-optimise-75.webp" width="2048" height="682" decoding="async" fetchpriority="high"/></div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
@@ -843,6 +850,11 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
       © 2026 WebÉclat —
       Création de sites internet.
     </p>
+<nav class="footer-legal-links" aria-label="Informations légales">
+<a href="mentions-legales.html">Mentions légales</a>
+<span aria-hidden="true">·</span>
+<a href="politique-confidentialite.html">Politique de confidentialité</a>
+</nav>
 </footer><script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
