@@ -1,0 +1,14 @@
+{
+  "name": "WebÉclat",
+  "description": "Création de sites internet pour artisans, commerçants et indépendants.",
+  "url": "https://webeclat.pages.dev/",
+  "language": "fr",
+  "pages": [
+    "https://webeclat.pages.dev/",
+    "https://webeclat.pages.dev/offres.html",
+    "https://webeclat.pages.dev/maintenance.html",
+    "https://webeclat.pages.dev/realisations.html",
+    "https://webeclat.pages.dev/apropos.html",
+    "https://webeclat.pages.dev/contact.html"
+  ]
+}
