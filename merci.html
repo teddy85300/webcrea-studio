@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Merci pour votre demande | WebCréa Studio</title>
+<title>Merci pour votre demande | WebÉclat</title>
 <link rel="stylesheet" href="style.css">
 <style>
 *{box-sizing:border-box}
@@ -18,25 +18,25 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:38px 
 .check{display:inline-flex;align-items:center;justify-content:center;width:76px;height:76px;border-radius:50%;background:#1c463c;color:#67e8b3;font-size:44px;font-weight:700;margin-bottom:14px}
 h1{font-size:clamp(26px,5vw,36px);line-height:1.2;margin:10px 0 14px}p{font-size:17px;color:#d3cbdc;margin:10px 0}
 a.button{display:inline-block;background:#9238ed;color:white;text-decoration:none;font-weight:700;padding:15px 25px;border-radius:13px;margin-top:25px;box-shadow:0 4px 18px #7a25df55}a.button:hover{background:#a84cf7}
-footer{text-align:center;padding:20px 12px;color:#a99eb5;font-size:13px}
+footer{text-align:center;padding:20px 12px;color:#a99eb5;font-size:13px}.legal-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:7px}.legal-links a{color:#cbb5e4;text-decoration:none}.legal-links a:hover{text-decoration:underline}
 @media(max-width:480px){.logo{font-size:21px}.panel{padding:35px 20px}.topbar{padding:15px 18px}}
 </style>
 </head>
 <body>
-<header class="topbar"><a class="logo" href="./">Web<span>Créa</span> Studio</a><select class="lang" id="language" aria-label="Langue"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="de">🇩🇪 Deutsch</option><option value="ru">🇷🇺 Русский</option></select></header>
-<main><section class="panel" aria-live="polite"><div class="check" aria-hidden="true">✓</div><h1 id="title">Merci pour votre demande !</h1><p id="message">Votre demande de devis a bien été envoyée.</p><p id="followup">WebCréa Studio vous répondra dans les meilleurs délais.</p><a class="button" href="./" id="home">Retour à l'accueil</a></section></main>
-<footer>© 2026 WebCréa Studio</footer>
+<header class="topbar"><a class="logo" href="./">Web<span>Éclat</span></a><select class="lang" id="language" aria-label="Langue"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="de">🇩🇪 Deutsch</option><option value="ru">🇷🇺 Русский</option></select></header>
+<main><section class="panel" aria-live="polite"><div class="check" aria-hidden="true">✓</div><h1 id="title">Merci pour votre demande !</h1><p id="message">Votre demande de devis a bien été envoyée.</p><p id="followup">WebÉclat vous répondra dans les meilleurs délais.</p><a class="button" href="./" id="home">Retour à l'accueil</a></section></main>
+<footer>© 2026 WebÉclat — Création de sites internet<div class="legal-links"><a href="mentions-legales.html">Mentions légales</a><span aria-hidden="true">·</span><a href="politique-confidentialite.html">Politique de confidentialité</a></div></footer>
 <script>
 const copy={
-fr:['Merci pour votre demande !','Votre demande de devis a bien été envoyée.','WebCréa Studio vous répondra dans les meilleurs délais.',"Retour à l’accueil"],
-en:['Thank you for your request!','Your quote request has been sent successfully.','WebCréa Studio will reply as soon as possible.','Back to home'],
-es:['¡Gracias por tu solicitud!','Tu solicitud de presupuesto se ha enviado correctamente.','WebCréa Studio te responderá lo antes posible.','Volver al inicio'],
-de:['Vielen Dank für Ihre Anfrage!','Ihre Angebotsanfrage wurde erfolgreich gesendet.','WebCréa Studio wird sich schnellstmöglich bei Ihnen melden.','Zur Startseite'],
-ru:['Спасибо за ваш запрос!','Ваш запрос на расчёт успешно отправлен.','WebCréa Studio ответит вам в ближайшее время.','На главную']
+fr:['Merci pour votre demande !','Votre demande de devis a bien été envoyée.','WebÉclat vous répondra dans les meilleurs délais.',"Retour à l’accueil"],
+en:['Thank you for your request!','Your quote request has been sent successfully.','WebÉclat will reply as soon as possible.','Back to home'],
+es:['¡Gracias por tu solicitud!','Tu solicitud de presupuesto se ha enviado correctamente.','WebÉclat te responderá lo antes posible.','Volver al inicio'],
+de:['Vielen Dank für Ihre Anfrage!','Ihre Angebotsanfrage wurde erfolgreich gesendet.','WebÉclat wird sich schnellstmöglich bei Ihnen melden.','Zur Startseite'],
+ru:['Спасибо за ваш запрос!','Ваш запрос на расчёт успешно отправлен.','WebÉclat ответит вам в ближайшее время.','На главную']
 };
 const select=document.getElementById('language');
-function setLanguage(lang){if(!copy[lang])lang='fr';document.documentElement.lang=lang;select.value=lang;['title','message','followup','home'].forEach((id,i)=>document.getElementById(id).textContent=copy[lang][i]);try{localStorage.setItem('webcrea-language',lang)}catch(e){}}
-let saved='fr';try{saved=localStorage.getItem('webcrea-language')||'fr'}catch(e){}
+function setLanguage(lang){if(!copy[lang])lang='fr';document.documentElement.lang=lang;select.value=lang;['title','message','followup','home'].forEach((id,i)=>document.getElementById(id).textContent=copy[lang][i]);try{localStorage.setItem('webeclat-language',lang)}catch(e){}}
+let saved='fr';try{saved=localStorage.getItem('webeclat-language')||'fr'}catch(e){}
 setLanguage(saved);select.addEventListener('change',e=>setLanguage(e.target.value));
 </script>
 </body>
