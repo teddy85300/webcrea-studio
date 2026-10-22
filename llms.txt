@@ -1,0 +1,12 @@
+# WebÉclat
+
+WebÉclat propose des services de création de sites internet pour les artisans, commerçants et indépendants.
+
+## Pages principales
+
+- [Accueil](https://webeclat.pages.dev/)
+- [Offres de création](https://webeclat.pages.dev/offres.html)
+- [Maintenance](https://webeclat.pages.dev/maintenance.html)
+- [Réalisations](https://webeclat.pages.dev/realisations.html)
+- [À propos](https://webeclat.pages.dev/apropos.html)
+- [Contact et devis](https://webeclat.pages.dev/contact.html)
