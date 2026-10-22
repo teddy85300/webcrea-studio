@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://webeclat.pages.dev/sitemap.xml
