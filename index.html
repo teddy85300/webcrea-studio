@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
+<!DOCTYPE html><html lang="fr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="WebÉclat crée des sites internet modernes et professionnels pour les artisans, commerçants et indépendants." name="description"/>
@@ -457,7 +454,6 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section#maintenance article.card .price { font-size: 36px !important; }
 }
 </style>
-
 <style id="webeclat-mobile-carousel-2026">
 /* Ajustements mobiles uniquement : accueil pleine hauteur et cartes à glisser. */
 @media (max-width: 768px) {
@@ -651,25 +647,31 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 .faq-list details p{margin:0;padding:0 22px 20px;color:#d8d0e3;line-height:1.65}
 @media(max-width:768px){#faq{padding:35px 16px!important}.faq-list summary{padding:16px;font-size:15px}.faq-list details p{padding:0 16px 16px;font-size:14px}}
 </style>
-</head>
-<body>
-<!-- EN-TETE -->
-<header>
-<div class="logo"><img class="brand-full-logo" src="images/logo-webeclat-complet.png" alt="WebÉCLAT" /></div>
-<div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header>
-<!-- MENU -->
-<nav aria-label="Navigation principale" class="site-navigation">
+<style id="multi-page-layout">
+/* Pages courtes et navigation claire */
+.page-intro{padding:64px 20px 22px;text-align:center;max-width:950px;margin:auto}
+.page-intro h1{font-size:clamp(30px,5vw,49px);line-height:1.15;margin:0 0 14px}
+.page-intro p{color:#c9c2d7;font-size:17px;line-height:1.6}
+.page-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1040px;margin:20px auto 55px;padding:0 18px}
+.page-shortcuts a{background:#1b1830;border:1px solid #403052;border-radius:18px;padding:22px;text-decoration:none;color:#f8f7ff;display:flex;flex-direction:column;gap:10px;transition:transform .15s,border-color .15s}
+.page-shortcuts a:hover{transform:translateY(-3px);border-color:#a855f7}
+.page-shortcuts strong{color:#d8b4fe;font-size:19px}
+.page-shortcuts span{color:#c9c2d7;font-size:14px;line-height:1.5}
+.about-card{max-width:850px;margin:24px auto;background:#1b1830;border:1px solid #403052;border-radius:18px;padding:28px;text-align:left;line-height:1.7}
+.about-card h2{color:#d8b4fe;margin-top:0}
+.site-navigation .nav-links a[aria-current="page"]{color:#d8b4fe;text-decoration:underline;text-underline-offset:6px}
+@media(max-width:768px){.page-intro{padding:36px 16px 12px}.page-intro h1{font-size:29px}.page-intro p{font-size:15px}.page-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px auto 28px;padding:0 12px}.page-shortcuts a{padding:17px 12px}.page-shortcuts strong{font-size:15px}.page-shortcuts span{font-size:12px}.about-card{margin:15px 12px;padding:20px}.section{padding:32px 14px!important}section.hero#accueil{min-height:0!important;display:block!important;padding:35px 14px 26px!important}section.hero#accueil>.quick-prices{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:520px!important}section.hero#accueil>.quick-prices .quick-price{min-height:75px!important;padding:10px 5px!important}section.hero#accueil>.quick-prices .quick-price strong{font-size:clamp(11px,3.2vw,15px)!important}section.hero#accueil > h1,section.hero#accueil > p,section.hero#accueil > .quick-prices,section.hero#accueil > a.btn{position:static!important;top:auto!important}}
+</style></head><body><header>
+<div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-complet.png"/></div>
+<div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
 <div class="nav-links" id="navLinks">
-<a data-i18n="home" href="#accueil">Accueil</a>
-<a data-i18n="offers" href="#services">Nos offres</a>
-<a data-i18n="maintenanceNav" href="#maintenance">Maintenance</a><a data-i18n="works" href="#realisations">Réalisations</a>
-<a data-i18n="whyNav" href="#avantages">Pourquoi nous ?</a>
-<a data-i18n="contact" href="#contact">Contact</a>
-</div>
-</nav>
-<main>
-<!-- ACCUEIL -->
-<section class="hero" id="accueil">
+<a data-i18n="home" href="index.html">Accueil</a>
+<a data-i18n="offers" href="offres.html#services">Nos offres</a>
+<a data-i18n="maintenanceNav" href="maintenance.html#maintenance">Maintenance</a><a data-i18n="works" href="realisations.html#realisations">Réalisations</a>
+<a data-i18n="whyNav" href="apropos.html#avantages">Pourquoi nous ?</a>
+<a data-i18n="contact" href="contact.html#contact">Contact</a>
+<a href="apropos.html#avantages">À propos</a><a href="contact.html#faq">FAQ</a></div>
+</nav><main><section class="hero" id="accueil">
 <h1 data-i18n="heroTitle">
         Un site internet professionnel
         pour développer votre activité.
@@ -682,178 +684,36 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         accessibles sur ordinateur,
         tablette et smartphone.
       </p><p class="hero-short" data-i18n="heroShort">Des sites modernes pour artisans, commerçants et indépendants, adaptés à tous les écrans.</p><div aria-label="Accès rapide aux tarifs" class="quick-prices">
-<a class="quick-price" href="#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
-<a class="quick-price" href="#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="offres.html#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="maintenance.html#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
 </div>
-<a class="btn" data-i18n="discover" href="#services">
+<a class="btn" data-i18n="discover" href="offres.html#services">
         Découvrir nos offres
       </a>
-<a class="btn" data-i18n="contactUs" href="#contact">
+<a class="btn" data-i18n="contactUs" href="contact.html#contact">
         Nous contacter
       </a>
-</section>
-<!-- OFFRES -->
-<section class="section" id="services">
-<h2 data-i18n="offersTitle">Nos offres de création</h2>
-<p class="intro" data-i18n="offersDesc">
-        Des sites internet modernes,
-        adaptés aux besoins et aux budgets
-        des petites entreprises.
-      </p>
-<aside class="promo-offer" aria-label="Offre promotionnelle WebÉclat">
-<strong data-i18n="promoTitle">Offre spéciale : -10 % sur la création de votre site</strong>
-<p data-i18n="promoText">Pour toute commande d'un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).</p>
-<small data-i18n="promoConditions">Offre valable jusqu'au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.</small>
-</aside>
-<div class="cards">
-<!-- STARTER -->
-<article class="card"><h3 data-i18n="essential">Site Starter</h3><div class="price">89 €</div><ul>
-<li data-i18n="b1">Site vitrine 1 page</li><li data-i18n="b2">Design moderne</li><li data-i18n="b3">Adapté aux smartphones</li><li data-i18n="b4">Présentation de votre activité</li><li data-i18n="b5">Bouton de contact</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Starter 89 €" href="#contact">Demander un devis</a></article>
-<article class="card featured"><h3 data-i18n="professional">Site Pro</h3><div class="price">189 €</div><ul>
-<li data-i18n="p1">Jusqu'à 5 pages</li><li data-i18n="p2">Design personnalisé</li><li data-i18n="p3">Compatible smartphones</li><li data-i18n="p4">Galerie de réalisations</li><li data-i18n="p5">Formulaire de contact</li><li data-i18n="p6">Référencement de base</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Pro 189 €" href="#contact">Demander un devis</a></article>
-<article class="card"><h3 data-i18n="premium">Site Premium</h3><div class="price">289 €</div><ul>
-<li data-i18n="r1">Jusqu'à 8 pages</li><li data-i18n="r2">Design sur mesure</li><li data-i18n="r3">Galerie photos</li><li data-i18n="p5">Formulaire de contact</li><li data-i18n="r5">Optimisation mobile</li><li data-i18n="p6">Référencement de base</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Premium 289 €" href="#contact">Demander un devis</a></article>
+</section><div class="page-shortcuts">
+<a href="offres.html#services"><strong>Nos offres</strong><span>Sites vitrines dès 89 € et promotion de -10 % sous conditions.</span></a>
+<a href="maintenance.html#maintenance"><strong>Maintenance</strong><span>Des formules facultatives à partir de 0 €/mois.</span></a>
+<a href="realisations.html#realisations"><strong>Réalisations</strong><span>Découvrez le site créé pour WR Plomberie.</span></a>
+<a href="apropos.html#avantages"><strong>Pourquoi WebÉclat ?</strong><span>Un accompagnement humain et personnalisé.</span></a>
+<a href="contact.html#faq"><strong>Questions fréquentes</strong><span>Prix, domaine en .fr, abonnement et délais.</span></a>
+<a href="contact.html#contact"><strong>Devis gratuit</strong><span>Présentez votre projet via le formulaire sécurisé.</span></a>
+</div></main><div class="quote-choice" hidden="" id="quoteChoice">
+<div aria-describedby="quoteChoiceText" aria-labelledby="quoteChoiceTitle" aria-modal="true" class="quote-choice-panel" role="dialog">
+<button aria-label="Fermer" class="quote-choice-close" id="quoteChoiceClose" type="button">×</button>
+<h2 id="quoteChoiceTitle">Demander un devis</h2>
+<p id="quoteChoiceText">Choisissez comment envoyer votre demande.</p>
+<a class="btn" href="contact.html#contact" id="quoteChoiceForm">Remplir le formulaire</a>
+<a class="btn quote-secondary" href="mailto:webcreastudio.france@gmail.com" id="quoteChoiceEmail">Envoyer un e-mail préparé</a>
 </div>
-<p class="note" data-i18n="offersNote">
-        Tarifs de lancement indicatifs.
-        Hébergement, nom de domaine et
-        fonctionnalités spécifiques non inclus.
-        Un devis personnalisé est établi
-        selon les besoins de votre projet.
-      </p>
-</section>
-<!-- REALISATIONS -->
-<section class="section" id="maintenance">
-<h2 data-i18n="maintenanceTitle">Maintenance &amp; suivi</h2>
-<p class="intro" data-i18n="maintenanceIntro">Gardez votre site à jour avec nos abonnements facultatifs.</p>
-<div class="cards">
-<article class="card"><h3 data-i18n="maintenanceBasic">Gratuit</h3><div class="price">0 € <small data-i18n="perMonth">/mois</small></div>
-<p data-i18n="maintenanceBasicDesc">Aucun abonnement obligatoire. Le site reste publié sur son hébergement gratuit, sous réserve des conditions du fournisseur. Les modifications et l'assistance sont facturées séparément.</p>
-<a class="btn" data-i18n="choosePlan" data-select-plan="Suivi Gratuit 0 €/mois" href="#contact">Choisir cette formule</a></article>
-<article class="card featured"><div class="popular" data-i18n="popular">Le plus demandé</div><h3 data-i18n="maintenanceComfort">Confort</h3><div class="price">7,90 € <small data-i18n="perMonth">/mois</small></div>
-<p data-i18n="maintenanceComfortDesc">Vérification périodique du site, assistance liée au site et une petite modification de contenu par mois.</p>
-<a class="btn" data-i18n="choosePlan" data-select-plan="Maintenance Confort 7,90 €/mois" href="#contact">Choisir cette formule</a></article>
-<article class="card"><h3 data-i18n="maintenancePremium">Premium</h3><div class="price">17,90 € <small data-i18n="perMonth">/mois</small></div>
-<p data-i18n="maintenancePremiumDesc">Prestations Confort et jusqu'à une heure de modifications de contenu par mois, avec traitement prioritaire les jours ouvrés.</p>
-<a class="btn" data-i18n="choosePlan" data-select-plan="Maintenance Premium 17,90 €/mois" href="#contact">Choisir cette formule</a></article>
-</div>
-<p class="note" data-i18n="maintenanceNote">Abonnements facultatifs, sans engagement, résiliables à tout moment pour les prochaines échéances. Aucun remboursement automatique d'une période déjà commencée. Temps non utilisé non reportable. Prestations détaillées au devis.</p>
-<div class="contact-box" style="max-width:850px"><h3 data-i18n="domainTitle">Nom de domaine et hébergement</h3>
-<p data-i18n="domainDesc">Une adresse gratuite en .pages.dev est possible selon les conditions du service d'hébergement. Pour une adresse personnalisée en .fr, le nom de domaine est acheté et renouvelé par le client directement auprès du fournisseur. Nous pouvons vous accompagner dans sa configuration. Les frais du domaine ne sont pas inclus dans les prix affichés.</p></div>
-</section><section class="section" id="realisations">
-<h2 data-i18n="worksTitle">Nos réalisations</h2>
-<p class="intro" data-i18n="worksDesc">
-        Découvrez un exemple concret
-        de site internet réalisé.
-      </p>
-<article class="portfolio-card">
-<img alt="Capture du site WR Plomberie" class="portfolio-image" loading="lazy" src="demonstrations/wr-plomberie/apercu.png"/>
-<h3>WR Plomberie</h3>
-<p data-i18n="portfolioDesc">
-          Création d'un site vitrine
-          pour une entreprise de plomberie.
-          Présentation des prestations,
-          des tarifs, des interventions
-          et des coordonnées.
-        </p>
-<a class="btn" data-i18n="visit" href="https://teddy85300.github.io/wr-plomberie/" rel="noopener noreferrer" target="_blank">
-          Visiter le site WR Plomberie ↗
-        </a>
-</article>
-</section>
-<!-- AVANTAGES -->
-<section class="section" id="avantages">
-<h2 data-i18n="whyTitle">Pourquoi choisir WebÉclat ?</h2>
-<div class="cards">
-<article class="card"><h3 data-i18n="whyHeading1">Un site à votre image</h3><p data-i18n="why1">Un site professionnel et personnalisé pour valoriser votre activité et inspirer confiance à vos clients.</p></article>
-<article class="card"><h3 data-i18n="whyHeading2">Sans abonnement obligatoire</h3><p data-i18n="why2">Vous choisissez librement votre formule. La maintenance est facultative, avec des tarifs transparents.</p></article>
-<article class="card"><h3 data-i18n="whyHeading3">Un accompagnement personnalisé</h3><p data-i18n="why3">Un interlocuteur pour vous conseiller, créer votre site et vous accompagner dans sa mise en ligne.</p></article>
-</div>
-</section>
-<!-- QUESTIONS FRÉQUENTES -->
-<section class="section" id="faq">
-<h2 data-i18n="faqTitle">Questions fréquentes</h2>
-<p class="intro" data-i18n="faqIntro">Les réponses aux questions les plus courantes avant de lancer votre projet.</p>
-<div class="faq-list">
-<details><summary data-i18n="faqQ1">Le prix affiché est-il définitif ?</summary><p data-i18n="faqA1">Les tarifs présentés sont indicatifs. Un devis personnalisé précise le prix final selon vos besoins, les fonctionnalités souhaitées et les éventuels frais supplémentaires.</p></details>
-<details><summary data-i18n="faqQ2">Dois-je payer un abonnement ?</summary><p data-i18n="faqA2">Non. La maintenance est facultative. Vous pouvez choisir une formule sans abonnement ou opter pour un suivi à partir de 7,90 € par mois.</p></details>
-<details><summary data-i18n="faqQ3">Puis-je avoir une adresse en .fr ?</summary><p data-i18n="faqA3">Oui. Vous pouvez utiliser un nom de domaine personnalisé en .fr, acheté et renouvelé séparément à votre nom. WebÉclat peut vous accompagner dans sa configuration.</p></details>
-<details><summary data-i18n="faqQ4">Combien de temps faut-il pour créer mon site ?</summary><p data-i18n="faqA4">Le délai dépend du nombre de pages, du contenu fourni et des fonctionnalités demandées. Une estimation vous est communiquée dans votre devis.</p></details>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="section contact" id="contact">
-<h2 data-i18n="contactTitle">Parlons de votre projet</h2>
-<p class="intro" data-i18n="contactDesc">
-        Vous souhaitez créer un site internet
-        pour votre entreprise ?
-        Contactez WebÉclat
-        pour demander un devis personnalisé.
-      </p>
-<div class="quote-form-wrap">
-<h3 data-i18n="formTitle">Demandez votre devis en ligne</h3>
-<p data-i18n="formIntro">Remplissez ce formulaire : aucun logiciel de messagerie nécessaire.</p>
-<form action="https://formspree.io/f/xoejowep" class="quote-form" method="POST">
-<label><span data-i18n="formName">Votre nom *</span><input autocomplete="name" maxlength="120" name="Nom" required="" type="text"/></label>
-<label><span data-i18n="formEmail">Votre adresse e-mail *</span><input autocomplete="email" maxlength="180" name="email" required="" type="email"/></label>
-<label><span data-i18n="formBusiness">Entreprise (facultatif)</span><input maxlength="160" name="Entreprise" type="text"/></label>
-<label><span data-i18n="formOffer">Formule souhaitée *</span>
-<select name="Formule" required="">
-<option data-i18n="formSelect" value="">Sélectionnez une formule</option>
-<option value="Site Starter 89 €">Site Starter — 89 €</option>
-<option value="Site Pro 189 €">Site Pro — 189 €</option>
-<option value="Site Premium 289 €">Site Premium — 289 €</option>
-<option value="Suivi Gratuit 0 €/mois">Suivi Gratuit — 0 €/mois</option>
-<option value="Maintenance Confort 7,90 €/mois">Maintenance Confort — 7,90 €/mois</option>
-<option value="Maintenance Premium 17,90 €/mois">Maintenance Premium — 17,90 €/mois</option>
-<option data-i18n="formOther" value="Autre projet">Autre projet / devis personnalisé</option>
-</select></label>
-<label><span data-i18n="formMessage">Décrivez votre projet *</span><textarea maxlength="5000" name="Projet" required=""></textarea></label>
-<label class="form-consent"><input name="Accord_transmission" required="" type="checkbox" value="Oui"/><span data-i18n="formConsent">J'accepte que mes informations soient transmises via Formspree pour répondre à ma demande de devis.</span></label>
-<p class="form-privacy" data-i18n="formPrivacy">Les informations servent uniquement à répondre à votre demande. Le formulaire utilise le service tiers Formspree.</p>
-<button class="btn" data-i18n="formSend" type="submit">Envoyer ma demande</button>
-</form></div><div class="contact-box">
-<h3 data-i18n="contactEmail">Contactez-nous par e-mail</h3>
-<p data-i18n="contactInfo">
-          Présentez-nous votre activité
-          et le site que vous souhaitez créer.
-        </p>
-<a class="contact-email" href="mailto:webcreastudio.france@gmail.com">
-          webcreastudio.france@gmail.com
-        </a>
-<p data-i18n="contactPrompt">
-          Cliquez ci-dessous pour préparer
-          votre demande de devis.
-        </p>
-<a class="btn" data-focus-form="true" data-i18n="contactButton" href="#contact">Remplir le formulaire</a>
-<p class="note" data-i18n="contactNote">
-          Utilisez le formulaire ci-dessus pour recevoir une réponse par e-mail.
-        </p>
-</div>
-</section>
-</main>
-<div id="quoteChoice" class="quote-choice" hidden>
-  <div class="quote-choice-panel" role="dialog" aria-modal="true" aria-labelledby="quoteChoiceTitle" aria-describedby="quoteChoiceText">
-    <button type="button" id="quoteChoiceClose" class="quote-choice-close" aria-label="Fermer">×</button>
-    <h2 id="quoteChoiceTitle">Demander un devis</h2>
-    <p id="quoteChoiceText">Choisissez comment envoyer votre demande.</p>
-    <a href="#contact" id="quoteChoiceForm" class="btn">Remplir le formulaire</a>
-    <a href="mailto:webcreastudio.france@gmail.com" id="quoteChoiceEmail" class="btn quote-secondary">Envoyer un e-mail préparé</a>
-  </div>
-</div>
-
-<!-- PIED DE PAGE -->
-<footer>
+</div><footer>
 <p data-i18n="footer">
       © 2026 WebÉclat —
       Création de sites internet.
     </p>
-</footer>
-<!-- FONCTIONNEMENT DU MENU MOBILE -->
-<script>
+</footer><script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -914,7 +774,8 @@ langSelect.addEventListener("change", e => setLanguage(e.target.value));
 let saved = "fr";
 try { saved = localStorage.getItem("webeclat-language") || "fr"; } catch(e) {}
 setLanguage(translations[saved] ? saved : "fr");
-</script><script>
+</script>
+<script>
 // Chaque offre propose le formulaire ou un e-mail déjà préparé.
 (function () {
   const overlay = document.getElementById('quoteChoice');
@@ -944,6 +805,7 @@ setLanguage(translations[saved] ? saved : "fr");
       const lang = document.documentElement.lang;
       const t = words[lang] || words.fr;
       if (offerSelect) offerSelect.value = plan;
+      try { sessionStorage.setItem("webeclat-selected-plan",plan); } catch(e) {}
       title.textContent = t[0] + ' — ' + plan;
       description.textContent = t[1];
       formButton.textContent = t[2];
@@ -981,7 +843,8 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
     if (field) setTimeout(() => field.focus({preventScroll:true}), 300);
   });
 });
-</script><script>/* Amélioration de l'accessibilité du menu */
+</script>
+<script>/* Amélioration de l'accessibilité du menu */
 (function(){
  const btn=document.getElementById('menuToggle');
  const links=document.getElementById('navLinks');
@@ -990,5 +853,5 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
  btn.addEventListener('click',sync);
  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',sync));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
-})();</script></body>
-</html>
+})();</script>
+<script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script></body></html>
