@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="WebÉclat crée des sites internet modernes et professionnels pour les artisans, commerçants et indépendants." name="description"/>
+<title>WebÉclat | Création de sites internet</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    /* MENU SMARTPHONE */
+    .site-navigation {
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* REALISATION */
+    .portfolio-card {
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding: 25px;
+      background: #151d30;
+      border: 1px solid #293850;
+      border-radius: 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .portfolio-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      background: #0b1020;
+      border-radius: 12px;
+    }
+
+    .portfolio-card h3 {
+      color: #38bdf8;
+      font-size: 28px;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: 35px auto 0;
+      padding: 35px 25px;
+      background: #151d30;
+      border: 1px solid #293850;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin: 15px 0;
+      color: #38bdf8;
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      max-width: 850px;
+      margin: 20px auto;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .site-navigation {
+        display: block;
+        padding: 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 16px;
+        border: 0;
+        background: #101b30;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        background: #101b30;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 16px 20px;
+        text-align: center;
+        border-top: 1px solid #293850;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .portfolio-card {
+        padding: 15px;
+      }
+
+      .contact-box {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+<style>
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.language-wrap{display:flex;align-items:center;gap:9px;color:#e2e8f0;font-size:14px}
+.language-wrap select{background:#101b30;color:#fff;border:1px solid #334155;border-radius:10px;padding:10px 12px;font-size:14px;cursor:pointer}
+#maintenance .card{display:flex;flex-direction:column;gap:12px}
+#maintenance .card .btn{margin-top:auto}
+#maintenance .price small{font-size:15px;font-weight:500}
+#maintenance .annual{color:#38bdf8;font-weight:700;margin-top:-10px}
+#maintenance .popular{font-weight:700;color:#38bdf8;font-size:13px}
+#maintenance .card p{line-height:1.6}
+@media(max-width:768px){header{justify-content:center;text-align:center}.language-wrap{width:100%;justify-content:center}}
+</style><style>
+/* ACCÈS RAPIDE AUX PRIX, VISIBLE DÈS L'ACCUEIL */
+.quick-prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:660px;margin:24px auto}
+.quick-price{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:15px 20px;border:1px solid #38bdf8;border-radius:14px;background:#15243b;color:#fff;text-decoration:none;line-height:1.35}
+.quick-price strong{color:#38bdf8;font-size:19px}
+.quick-price small{font-size:12px;margin-left:3px}
+.quick-arrow{position:absolute;right:12px;top:10px;color:#38bdf8}
+#services,#maintenance{scroll-margin-top:10px}
+@media(max-width:768px){
+  header{padding:10px 12px!important;gap:6px!important}
+  .logo{font-size:22px!important}
+  .language-wrap{margin:0!important}
+  .language-wrap select{padding:7px!important}
+  .menu-toggle{padding:10px!important}
+  .hero{padding:26px 14px 30px!important}
+  .hero h1{font-size:clamp(25px,6vw,32px)!important;line-height:1.2!important;margin:0 auto 12px!important}
+  .hero p{font-size:14px!important;line-height:1.45!important;margin:0 auto 12px!important}
+  .quick-prices{gap:8px;margin:12px auto!important}
+  .quick-price{padding:12px 8px!important;font-size:12px!important;min-height:74px}
+  .quick-price strong{font-size:15px!important}
+  .quick-arrow{right:5px;top:4px}
+  .hero>.btn{padding:10px 12px!important;margin:5px!important;font-size:13px!important}
+  .section{padding:36px 14px!important}
+  .section h2{margin-bottom:12px!important}
+  .cards{gap:12px!important;margin:18px auto!important}
+  .card{padding:20px!important}
+  .card ul{margin:12px 0!important}
+  .card li{margin:4px 0!important}
+}
+@media(max-width:370px){.quick-price strong{font-size:13px!important}}
+</style><style>
+/* Version mobile compacte : préserve le fond et les couleurs de style.css */
+.hero-short{display:none}
+@media(max-width:768px){
+  header{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important;gap:8px!important;padding:9px 12px!important;min-height:0!important}
+  header .logo{font-size:clamp(18px,4.5vw,23px)!important;white-space:nowrap!important;line-height:1.1!important;margin:0!important}
+  .language-wrap{width:auto!important;flex:0 0 auto!important;margin:0!important;gap:0!important}
+  .language-wrap label{display:none!important}
+  .language-wrap select{max-width:145px!important;width:145px!important;padding:7px 5px!important;font-size:12px!important;border-radius:9px!important}
+  .site-navigation{padding:0!important}
+  .menu-toggle{padding:9px!important;font-size:14px!important;line-height:1.3!important}
+  .hero{min-height:0!important;height:auto!important;padding:30px 13px 26px!important;display:block!important}
+  .hero h1{font-size:clamp(24px,6vw,31px)!important;line-height:1.16!important;margin:0 auto 12px!important;max-width:600px!important}
+  .hero .hero-long{display:none!important}
+  .hero .hero-short{display:block!important;font-size:14px!important;line-height:1.4!important;max-width:550px!important;margin:0 auto 14px!important}
+  .quick-prices{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:14px auto 12px!important;max-width:540px!important}
+  .quick-price{min-height:70px!important;padding:12px 5px!important;font-size:12px!important;gap:4px!important}
+  .quick-price strong{font-size:clamp(12px,3.5vw,16px)!important;white-space:nowrap!important}
+  .quick-price small{font-size:10px!important}
+  .quick-arrow{top:2px!important;right:4px!important}
+  .hero>a.btn{display:inline-block!important;max-width:none!important;width:auto!important;padding:10px 12px!important;margin:4px 3px!important;font-size:13px!important;line-height:1.25!important}
+  .section{padding:35px 14px!important}
+  .section h2{font-size:26px!important}
+  .cards{gap:12px!important;margin:18px auto!important}
+  .card{padding:20px!important}
+}
+@media(max-width:370px){header .logo{font-size:17px!important}.language-wrap select{width:125px!important}.quick-price strong{font-size:12px!important}}
+</style><style>
+@media(max-width:768px){
+ #services,#maintenance{padding:24px 14px!important}
+ #services h2,#maintenance h2{font-size:25px!important;line-height:1.2!important;margin:0 0 7px!important}
+ #services .intro,#maintenance .intro{font-size:14px!important;line-height:1.4!important;margin:0 auto 12px!important}
+ #services .cards,#maintenance .cards{margin:10px auto!important;gap:10px!important}
+ #services .card,#maintenance .card{padding:16px!important;border-radius:15px!important;gap:5px!important}
+ #services .card h3,#maintenance .card h3{font-size:20px!important;margin:0 0 2px!important}
+ #services .card .price,#maintenance .card .price{font-size:29px!important;margin:0 0 5px!important}
+ #services .card ul{margin:5px 0 12px!important;padding-left:19px!important}
+ #services .card li{font-size:14px!important;margin:2px 0!important;line-height:1.45!important}
+ #services .card .btn,#maintenance .card .btn{padding:10px 12px!important;margin:8px 0 0!important;font-size:14px!important}
+ #maintenance .card p{font-size:14px!important;margin:4px 0!important}
+ #services .note,#maintenance .note{font-size:12px!important;margin:12px auto!important}
+}
+.quote-form{display:grid;gap:13px;text-align:left;max-width:650px;margin:20px auto}
+.quote-form label{font-weight:600;font-size:14px}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #40506b;background:#0b1427;color:#fff;border-radius:10px;font:inherit}
+.quote-form textarea{min-height:110px;resize:vertical}
+.quote-form .btn{cursor:pointer;width:100%;margin:5px 0}
+.quote-form .form-consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.4}
+.quote-form .form-consent input{width:auto;margin:4px 0 0}
+.form-privacy{font-size:12px;color:#b6c5da}
+</style><style>
+/* Offres compactes sur mobile, même si style.css définit des espacements */
+@media(max-width:768px){
+  section#services,section#maintenance{padding:19px 12px!important}
+  section#services>h2,section#maintenance>h2{font-size:23px!important;line-height:1.18!important;margin:0 0 6px!important;padding:0!important}
+  section#services>p.intro,section#maintenance>p.intro{font-size:13px!important;line-height:1.35!important;margin:0 auto 11px!important;padding:0!important}
+  section#services .cards,section#maintenance .cards{gap:10px!important;margin:10px auto!important}
+  section#services article.card,section#maintenance article.card{padding:13px 14px!important;min-height:0!important}
+  section#services article.card h3,section#maintenance article.card h3{font-size:19px!important;line-height:1.2!important;margin:0 0 4px!important;padding:0!important}
+  section#services article.card .price,section#maintenance article.card .price{font-size:28px!important;line-height:1.15!important;margin:0 0 8px!important;padding:0!important}
+  section#services article.card ul,section#maintenance article.card ul{margin:5px 0 9px!important;padding:0!important;list-style:none!important}
+  section#services article.card ul li,section#maintenance article.card ul li{font-size:14px!important;line-height:1.3!important;margin:0!important;padding:7px 3px!important;min-height:0!important}
+  section#services article.card a.btn,section#maintenance article.card a.btn{padding:10px!important;margin:8px 0 0!important}
+}
+#quote-success{display:none;max-width:650px;margin:14px auto;padding:15px;border:1px solid #8c45ff;border-radius:12px;background:#221631;color:#fff;text-align:center}
+#quote-success:target{display:block}
+</style><style>
+/* Optimisation mobile 2026 : aucune modification de l'affichage ordinateur */
+@media (max-width:768px) {
+  header {padding:9px 12px!important;gap:7px!important;min-height:60px!important;}
+  header .logo {font-size:clamp(17px,4.3vw,22px)!important;letter-spacing:-.5px!important;}
+  header .language-wrap {margin-left:auto!important;min-width:0!important;}
+  header .language-wrap select {width:clamp(105px,28vw,138px)!important;max-width:138px!important;font-size:12px!important;padding:8px 3px!important;}
+  header .menu-toggle {display:flex!important;flex:0 0 39px!important;width:39px!important;height:39px!important;min-width:39px!important;padding:0!important;border:1px solid #34415d!important;border-radius:10px!important;background:#142137!important;font-size:21px!important;align-items:center!important;justify-content:center!important;line-height:1!important;}
+  .site-navigation {min-height:0!important;border:0!important;}
+  .site-navigation .nav-links {position:relative!important;z-index:15!important;}
+  .site-navigation .nav-links a {padding:12px 16px!important;font-size:14px!important;}
+  .hero {padding:21px 12px 22px!important;}
+  .hero h1 {font-size:clamp(22px,5.45vw,28px)!important;line-height:1.15!important;margin:0 auto 9px!important;max-width:540px!important;letter-spacing:-.45px!important;}
+  .hero .hero-short {font-size:13px!important;line-height:1.35!important;margin:0 auto 10px!important;}
+  .quick-prices {gap:7px!important;margin:10px auto 9px!important;}
+  .quick-price {min-height:60px!important;padding:9px 5px!important;border-radius:12px!important;gap:3px!important;}
+  .quick-price strong {font-size:clamp(11px,3.4vw,15px)!important;}
+  .quick-price small {font-size:9px!important;}
+  .hero>a.btn {padding:9px 10px!important;margin:3px 2px!important;font-size:12px!important;border-radius:11px!important;}
+  section#services,section#maintenance {padding:18px 12px!important;}
+  section#services>h2,section#maintenance>h2 {font-size:22px!important;margin:0 0 5px!important;}
+  section#services>p.intro,section#maintenance>p.intro {font-size:12.5px!important;margin:0 auto 9px!important;}
+  section#services article.card,section#maintenance article.card {padding:12px!important;}
+  section#services article.card h3,section#maintenance article.card h3 {font-size:18px!important;}
+  section#services article.card .price,section#maintenance article.card .price {font-size:27px!important;margin-bottom:5px!important;}
+  section#services article.card ul li,section#maintenance article.card ul li {padding:6px 3px!important;font-size:13.5px!important;}
+}
+@media(max-width:360px){header{padding:8px!important;gap:5px!important}header .logo{font-size:16px!important}header .language-wrap select{width:103px!important}header .menu-toggle{flex-basis:36px!important;width:36px!important;min-width:36px!important}}
+</style><style>
+/* Finitions de la version mobile : bureau inchangé */
+@media (max-width: 768px) {
+  #services .card ul {list-style:none!important;padding:0!important;margin:9px 0 12px!important;}
+  #services .card ul li {position:static!important;text-align:center!important;padding:7px 8px!important;line-height:1.45!important;}
+  #services .card ul li::before {content:none!important;display:none!important;}
+  #services .card .btn,#maintenance .card .btn {min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+  #services .card h3,#maintenance .card h3 {line-height:1.22!important;}
+  #maintenance .card p {line-height:1.5!important;}
+  #realisations .portfolio-image {max-width:100%;height:auto;object-fit:cover;}
+  .quote-form input,.quote-form select,.quote-form textarea {font-size:16px!important;min-height:44px;}
+  .quote-form button {min-height:48px;}
+  html {scroll-padding-top:12px;}
+}
+@media (max-width:360px) {
+  .hero>a.btn {font-size:11px!important;padding:10px 7px!important;}
+}
+</style><style>/* Finitions WebÉclat : confort, lisibilité et conversion */
+:root{color-scheme:dark}
+button,select,input,textarea{font-family:inherit}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d8b4fe;outline-offset:3px}
+.btn,.quick-price,.menu-toggle{touch-action:manipulation}
+.card,.portfolio-card,.contact-box{overflow-wrap:anywhere}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.16)}
+@media(max-width:768px){
+  .hero{padding-bottom:24px!important}
+  .hero h1{max-width:28ch!important}
+  .hero>a.btn{min-height:43px!important;display:inline-flex!important;align-items:center;justify-content:center}
+  section#services article.card,section#maintenance article.card{border-radius:16px!important}
+  section#services article.card ul li{font-size:14px!important;line-height:1.45!important}
+  section#services article.card .btn,section#maintenance article.card .btn{width:100%;margin-left:0!important;margin-right:0!important}
+  #avantages .card{padding:17px!important}
+  #avantages .card h3{font-size:19px!important;margin-bottom:6px!important}
+  #avantages .card p{font-size:14px!important;line-height:1.5!important;margin:0!important}
+  #realisations .portfolio-card{margin-top:15px!important}
+  #realisations .portfolio-card h3{font-size:22px!important;margin:12px 0 6px!important}
+  #contact .quote-form-wrap{max-width:650px;margin:auto}
+  #contact .quote-form{gap:11px}
+  #contact .contact-box{margin-top:22px}
+  .section .intro{font-size:14px!important;line-height:1.45!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style><meta content="#09090f" name="theme-color"/><style>
+/* Choix du mode de demande de devis */
+.quote-choice[hidden]{display:none!important}
+.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78)}
+.quote-choice-panel{position:relative;width:min(100%,440px);max-height:90vh;overflow:auto;padding:26px 20px;background:#171525;border:1px solid #8d48ec;border-radius:18px;color:#fff;text-align:center;box-shadow:0 20px 70px #0009}
+.quote-choice-panel h2{font-size:23px;line-height:1.25;margin:8px 26px 12px}
+.quote-choice-panel p{color:#d8d4e5;line-height:1.5;margin:0 0 18px}
+.quote-choice-panel .btn{display:block;width:100%;margin:10px 0;padding:13px 12px;font-size:15px;min-height:48px}
+.quote-choice-panel .quote-secondary{background:#242138;border-color:#796397}
+.quote-choice-close{position:absolute;right:10px;top:8px;width:38px;height:38px;border:0;border-radius:10px;background:transparent;color:#fff;font-size:27px;cursor:pointer}
+@media(max-width:380px){.quote-choice-panel{padding:22px 15px}.quote-choice-panel h2{font-size:20px}}
+</style>
+<style id="webeclat-mobile-pro">
+/* Finitions smartphone WebÉCLAT : affichage 320–768 px */
+@media (max-width: 768px) {
+  html, body { width: 100%; overflow-x: clip; }
+  body { -webkit-text-size-adjust: 100%; }
+  header {
+    display:flex!important; align-items:center!important; justify-content:space-between!important;
+    flex-wrap:nowrap!important; gap:6px!important; min-height:72px!important;
+    padding:9px 10px!important; text-align:left!important;
+  }
+  header .logo { display:flex!important; flex:1 1 auto!important; min-width:0!important; align-items:center!important; }
+  header .logo .brand-full-logo {
+    display:block!important; width:100%!important; max-width:225px!important;
+    height:auto!important; object-fit:contain!important; mix-blend-mode:screen!important;
+  }
+  header .language-wrap { width:auto!important; flex:0 0 auto!important; margin:0!important; }
+  header .language-wrap label { display:none!important; }
+  header .language-wrap select {
+    width:96px!important; max-width:96px!important; min-height:42px!important;
+    font-size:12px!important; padding:6px 4px!important; border-radius:10px!important;
+  }
+  header .menu-toggle {
+    display:flex!important; flex:0 0 42px!important; width:42px!important; min-width:42px!important;
+    height:42px!important; padding:0!important; font-size:22px!important;
+    align-items:center!important; justify-content:center!important;
+  }
+  .site-navigation { padding:0!important; }
+  .site-navigation .nav-links a { min-height:44px!important; display:flex!important; align-items:center!important; }
+  section.hero {
+    padding:25px 15px 27px!important; min-height:0!important;
+    background-position:center!important;
+  }
+  section.hero h1 {
+    font-size:clamp(24px,6.2vw,30px)!important; line-height:1.16!important;
+    max-width:22ch!important; letter-spacing:-.5px!important; margin:0 auto 11px!important;
+    text-wrap:balance;
+  }
+  section.hero .hero-short {
+    display:block!important; max-width:36ch!important; margin:0 auto 13px!important;
+    font-size:clamp(14px,3.65vw,16px)!important; line-height:1.48!important;
+  }
+  section.hero .quick-prices {
+    width:100%!important; max-width:520px!important; gap:9px!important;
+    margin:12px auto 13px!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  section.hero .quick-price {
+    min-height:76px!important; padding:12px 7px!important; border-radius:15px!important;
+  }
+  section.hero .quick-price strong { font-size:clamp(12px,3.6vw,17px)!important; }
+  section.hero .quick-price small { font-size:10px!important; }
+  section.hero>a.btn {
+    display:inline-flex!important; align-items:center!important; justify-content:center!important;
+    min-height:48px!important; padding:12px 14px!important; margin:3px 3px!important;
+    font-size:clamp(12px,3.5vw,15px)!important; border-radius:13px!important;
+  }
+  section#services, section#maintenance, section#realisations, section#avantages, section#contact {
+    padding:42px 16px!important;
+  }
+  section#services>h2, section#maintenance>h2 {
+    font-size:clamp(25px,6.2vw,30px)!important; line-height:1.2!important; margin-bottom:12px!important;
+  }
+  section#services>p.intro, section#maintenance>p.intro {
+    font-size:15px!important; line-height:1.5!important; margin:0 auto 24px!important;
+  }
+  section#services .cards, section#maintenance .cards {
+    grid-template-columns:1fr!important; gap:18px!important; margin:20px auto 0!important;
+  }
+  section#services article.card, section#maintenance article.card {
+    padding:25px 20px!important; border-radius:22px!important;
+  }
+  section#services article.card h3, section#maintenance article.card h3 {
+    font-size:23px!important; margin:0 0 12px!important;
+  }
+  section#services article.card .price, section#maintenance article.card .price {
+    font-size:38px!important; margin-bottom:16px!important;
+  }
+  section#services article.card ul li, section#maintenance article.card ul li {
+    padding:12px 7px!important; font-size:15px!important; line-height:1.45!important;
+  }
+  section#services article.card .btn, section#maintenance article.card .btn {
+    min-height:52px!important; font-size:16px!important; border-radius:14px!important;
+  }
+  .quote-form input, .quote-form select, .quote-form textarea { font-size:16px!important; }
+}
+@media (max-width: 370px) {
+  header { gap:4px!important; padding:8px 7px!important; }
+  header .logo .brand-full-logo { max-width:185px!important; }
+  header .language-wrap select { width:87px!important; max-width:87px!important; font-size:11px!important; }
+  header .menu-toggle { flex-basis:39px!important; width:39px!important; min-width:39px!important; }
+  section.hero { padding-left:10px!important; padding-right:10px!important; }
+  section.hero .quick-price { padding:12px 4px!important; }
+}
+</style>
+<style id="webeclat-mobile-final-2026">
+/* Ajustements finaux pour smartphone uniquement ; design ordinateur inchangé. */
+@media (max-width: 768px) {
+  section.hero .quick-prices {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 410px !important;
+    gap: 10px !important;
+    margin: 16px auto !important;
+  }
+  section.hero .quick-price {
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 12px 26px !important;
+  }
+  section.hero .quick-price strong {
+    display: block !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    font-size: clamp(15px, 4.2vw, 19px) !important;
+    line-height: 1.4 !important;
+  }
+  section.hero .quick-price small {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+  section.hero .quick-arrow { right: 12px !important; top: 10px !important; }
+  section.hero h1 { max-width: 26ch !important; }
+  section.hero>a.btn { min-height: 46px !important; }
+  section#services article.card .price,
+  section#maintenance article.card .price { font-size: 36px !important; }
+}
+</style>
+<style id="webeclat-mobile-carousel-2026">
+/* Ajustements mobiles uniquement : accueil pleine hauteur et cartes à glisser. */
+@media (max-width: 768px) {
+  section.hero {
+    min-height: calc(100svh - 72px) !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 14px 26px !important;
+  }
+  section.hero h1 { font-size: clamp(23px, 5.7vw, 30px) !important; }
+  section.hero .quick-prices {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 410px !important;
+    gap: 9px !important;
+    margin: 12px auto !important;
+  }
+  section.hero .quick-price { min-height: 67px !important; padding: 10px 20px !important; }
+  section.hero .quick-price strong {
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    font-size: clamp(14px, 3.8vw, 18px) !important;
+  }
+  section.hero .quick-price small { white-space: nowrap !important; }
+  section.hero > a.btn { min-height: 44px !important; }
+  /* Les cartes restent côte à côte sur ordinateur ; glissement natif sur téléphone. */
+  section#services .cards,
+  section#maintenance .cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    width: calc(100% + 16px) !important;
+    max-width: none !important;
+    margin: 15px -8px 0 !important;
+    padding: 3px 8px 18px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 8px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  section#services .cards > article.card,
+  section#maintenance .cards > article.card {
+    flex: 0 0 min(82vw, 340px) !important;
+    width: min(82vw, 340px) !important;
+    min-width: min(82vw, 340px) !important;
+    max-width: min(82vw, 340px) !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: start;
+    padding: 20px 17px !important;
+  }
+  section#services .card .price,
+  section#maintenance .card .price { font-size: 33px !important; }
+  section#services, section#maintenance { overflow: hidden; }
+  section#services > p.intro::after,
+  section#maintenance > p.intro::after {
+    content: "  ← Faites glisser les offres →";
+    display: block;
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  section#realisations .portfolio-card { padding: 15px !important; }
+}
+@media (max-width: 370px) {
+  section.hero { padding: 13px 10px 18px !important; }
+  section.hero .quick-price { min-height: 62px !important; }
+  section.hero .quick-price strong { font-size: 13px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  section#services .cards, section#maintenance .cards { scroll-behavior: auto !important; }
+}
+</style>
+<style id="webeclat-mobile-finitions-2026">
+/* Finitions mobiles : accueil resserré, boutons sur une ligne et cartes plus courtes. */
+@media (max-width: 768px) {
+  section.hero {
+    min-height: 0 !important;
+    height: auto !important;
+    display: block !important;
+    padding: 28px 12px 24px !important;
+    text-align: center !important;
+  }
+  section.hero h1 { margin: 0 auto 12px !important; }
+  section.hero .hero-short { margin: 0 auto 13px !important; }
+  section.hero .quick-prices { margin: 13px auto 14px !important; gap: 9px !important; }
+  section.hero > a.btn {
+    display: inline-flex !important;
+    width: calc(50% - 12px) !important;
+    max-width: 210px !important;
+    min-height: 46px !important;
+    padding: 9px 6px !important;
+    margin: 3px 3px !important;
+    font-size: clamp(11px, 3.2vw, 14px) !important;
+    line-height: 1.2 !important;
+    vertical-align: middle !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+  }
+  section#services, section#maintenance { padding: 29px 13px !important; }
+  section#services > p.intro, section#maintenance > p.intro { margin-bottom: 12px !important; }
+  section#services .cards, section#maintenance .cards { margin-top: 10px !important; padding-bottom: 12px !important; }
+  section#services .cards > article.card, section#maintenance .cards > article.card {
+    padding: 17px 14px !important;
+    gap: 6px !important;
+  }
+  section#services article.card h3, section#maintenance article.card h3 { margin-bottom: 5px !important; font-size: 21px !important; }
+  section#services article.card .price, section#maintenance article.card .price { font-size: 31px !important; margin-bottom: 7px !important; }
+  section#services article.card ul { margin: 5px 0 9px !important; }
+  section#services article.card ul li { padding: 6px 3px !important; line-height: 1.35 !important; }
+  section#services article.card a.btn, section#maintenance article.card a.btn { min-height: 45px !important; margin-top: 8px !important; font-size: 14px !important; }
+  section#services > p.note, section#maintenance > p.note { margin: 10px auto !important; font-size: 12px !important; line-height: 1.45 !important; }
+}
+@media (max-width: 360px) {
+  section.hero > a.btn { font-size: 11px !important; padding: 9px 4px !important; }
+}
+</style>
+<style id="webeclat-hero-viewport-fix-2026">
+/* Correctif final : placé après les anciens styles intégrés pour éviter les conflits. */
+@media (max-width: 768px) {
+  section.hero#accueil {
+    box-sizing: border-box !important;
+    min-height: calc(100vh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-content: center !important;
+    justify-items: stretch !important;
+    column-gap: 6px !important;
+    row-gap: 0 !important;
+    padding: 24px 14px 30px !important;
+  }
+  section.hero#accueil > h1,
+  section.hero#accueil > p,
+  section.hero#accueil > .quick-prices {
+    grid-column: 1 / -1 !important;
+  }
+  section.hero#accueil > a.btn {
+    display: inline-flex !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 3px 0 !important;
+    padding: 10px 5px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+</style>
+<style id="webeclat-hero-balance-2026">
+/* Équilibre vertical sur les téléphones assez hauts : remonte la limite basse visuelle
+   en décalant doucement le contenu, sans toucher aux cartes ni au bureau. */
+@media (max-width: 768px) and (min-height: 700px) {
+  section.hero#accueil > h1,
+  section.hero#accueil > p,
+  section.hero#accueil > .quick-prices,
+  section.hero#accueil > a.btn {
+    position: relative !important;
+    top: clamp(16px, 4.5svh, 42px) !important;
+  }
+}
+</style>
+<style id="webeclat-promo-2026">
+/* Promotion discrète, cohérente avec les couleurs existantes. */
+.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252,.55);border-radius:16px;background:rgba(168,85,247,.09);text-align:center}
+.promo-offer strong{color:#d8b4fe;font-size:18px}
+.promo-offer p{margin:6px 0;color:#f8f7ff;line-height:1.5}
+.promo-offer small{display:block;color:#c9c2d7;font-size:12px;line-height:1.5}
+@media(max-width:768px){.promo-offer{margin:13px auto 16px;padding:13px 12px}.promo-offer strong{font-size:16px}.promo-offer p{font-size:13px}.promo-offer small{font-size:11px}}
+</style>
+<style id="webeclat-faq-style">
+#faq{padding-top:48px;padding-bottom:48px}
+.faq-list{max-width:850px;margin:25px auto 0;display:grid;gap:12px}
+.faq-list details{background:#1b1528;border:1px solid #50335f;border-radius:14px;overflow:hidden}
+.faq-list summary{list-style:none;cursor:pointer;padding:19px 22px;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';color:#c084fc;font-size:25px;line-height:1;flex:none}
+.faq-list details[open] summary::after{content:'−'}
+.faq-list details p{margin:0;padding:0 22px 20px;color:#d8d0e3;line-height:1.65}
+@media(max-width:768px){#faq{padding:35px 16px!important}.faq-list summary{padding:16px;font-size:15px}.faq-list details p{padding:0 16px 16px;font-size:14px}}
+</style>
+<style id="multi-page-layout">
+/* Pages courtes et navigation claire */
+.page-intro{padding:64px 20px 22px;text-align:center;max-width:950px;margin:auto}
+.page-intro h1{font-size:clamp(30px,5vw,49px);line-height:1.15;margin:0 0 14px}
+.page-intro p{color:#c9c2d7;font-size:17px;line-height:1.6}
+.page-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1040px;margin:20px auto 55px;padding:0 18px}
+.page-shortcuts a{background:#1b1830;border:1px solid #403052;border-radius:18px;padding:22px;text-decoration:none;color:#f8f7ff;display:flex;flex-direction:column;gap:10px;transition:transform .15s,border-color .15s}
+.page-shortcuts a:hover{transform:translateY(-3px);border-color:#a855f7}
+.page-shortcuts strong{color:#d8b4fe;font-size:19px}
+.page-shortcuts span{color:#c9c2d7;font-size:14px;line-height:1.5}
+.about-card{max-width:850px;margin:24px auto;background:#1b1830;border:1px solid #403052;border-radius:18px;padding:28px;text-align:left;line-height:1.7}
+.about-card h2{color:#d8b4fe;margin-top:0}
+.site-navigation .nav-links a[aria-current="page"]{color:#d8b4fe;text-decoration:underline;text-underline-offset:6px}
+@media(max-width:768px){.page-intro{padding:36px 16px 12px}.page-intro h1{font-size:29px}.page-intro p{font-size:15px}.page-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px auto 28px;padding:0 12px}.page-shortcuts a{padding:17px 12px}.page-shortcuts strong{font-size:15px}.page-shortcuts span{font-size:12px}.about-card{margin:15px 12px;padding:20px}.section{padding:32px 14px!important}section.hero#accueil{min-height:0!important;display:block!important;padding:35px 14px 26px!important}section.hero#accueil>.quick-prices{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:520px!important}section.hero#accueil>.quick-prices .quick-price{min-height:75px!important;padding:10px 5px!important}section.hero#accueil>.quick-prices .quick-price strong{font-size:clamp(11px,3.2vw,15px)!important}section.hero#accueil > h1,section.hero#accueil > p,section.hero#accueil > .quick-prices,section.hero#accueil > a.btn{position:static!important;top:auto!important}}
+</style></head><body><header>
+<div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-complet.png"/></div>
+<div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
+<div class="nav-links" id="navLinks">
+<a data-i18n="home" href="index.html">Accueil</a>
+<a data-i18n="offers" href="offres.html#services">Nos offres</a>
+<a data-i18n="maintenanceNav" href="maintenance.html#maintenance">Maintenance</a><a data-i18n="works" href="realisations.html#realisations">Réalisations</a>
+<a data-i18n="whyNav" href="apropos.html#avantages">Pourquoi nous ?</a>
+<a data-i18n="contact" href="contact.html#contact">Contact</a>
+<a href="apropos.html#avantages">À propos</a><a href="contact.html#faq">FAQ</a></div>
+</nav><main><div class="page-intro"><h1>Nos réalisations</h1><p>Découvrez un exemple concret de notre travail.</p></div><section class="section" id="realisations">
+<h2 data-i18n="worksTitle">Nos réalisations</h2>
+<p class="intro" data-i18n="worksDesc">
+        Découvrez un exemple concret
+        de site internet réalisé.
+      </p>
+<article class="portfolio-card">
+<img alt="Capture du site WR Plomberie" class="portfolio-image" loading="lazy" src="demonstrations/wr-plomberie/apercu.png"/>
+<h3>WR Plomberie</h3>
+<p data-i18n="portfolioDesc">
+          Création d'un site vitrine
+          pour une entreprise de plomberie.
+          Présentation des prestations,
+          des tarifs, des interventions
+          et des coordonnées.
+        </p>
+<a class="btn" data-i18n="visit" href="https://teddy85300.github.io/wr-plomberie/" rel="noopener noreferrer" target="_blank">
+          Visiter le site WR Plomberie ↗
+        </a>
+</article>
+</section></main><div class="quote-choice" hidden="" id="quoteChoice">
+<div aria-describedby="quoteChoiceText" aria-labelledby="quoteChoiceTitle" aria-modal="true" class="quote-choice-panel" role="dialog">
+<button aria-label="Fermer" class="quote-choice-close" id="quoteChoiceClose" type="button">×</button>
+<h2 id="quoteChoiceTitle">Demander un devis</h2>
+<p id="quoteChoiceText">Choisissez comment envoyer votre demande.</p>
+<a class="btn" href="contact.html#contact" id="quoteChoiceForm">Remplir le formulaire</a>
+<a class="btn quote-secondary" href="mailto:webcreastudio.france@gmail.com" id="quoteChoiceEmail">Envoyer un e-mail préparé</a>
+</div>
+</div><footer>
+<p data-i18n="footer">
+      © 2026 WebÉclat —
+      Création de sites internet.
+    </p>
+</footer><script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+  </script>
+<script>
+const translations = {"fr": {"menu": "Menu", "home": "Accueil", "offers": "Nos offres", "works": "Réalisations", "whyNav": "Pourquoi nous ?", "contact": "Contact", "heroTitle": "Un site internet professionnel pour développer votre activité.", "heroDesc": "WebÉclat crée des sites internet modernes pour les artisans, commerçants et entrepreneurs. Des solutions adaptées à votre image, accessibles sur ordinateur, tablette et smartphone.", "discover": "Découvrir nos offres", "contactUs": "Nous contacter", "offersTitle": "Nos offres de création", "offersDesc": "Des sites internet modernes, adaptés aux besoins et aux budgets des petites entreprises.", "essential": "Site Essentiel", "professional": "Site Professionnel", "premium": "Site Premium", "b1": "Site vitrine 1 page", "b2": "Design moderne", "b3": "Adapté aux smartphones", "b4": "Présentation de votre activité", "b5": "Bouton de contact", "p1": "Jusqu'à 5 pages", "p2": "Design personnalisé", "p3": "Compatible smartphones", "p4": "Galerie de réalisations", "p5": "Formulaire de contact", "p6": "Référencement de base", "r1": "Jusqu'à 8 pages", "r2": "Design sur mesure", "r3": "Galerie photos", "r5": "Optimisation mobile", "quote": "Demander un devis", "offersNote": "Tarifs de lancement indicatifs. Hébergement, nom de domaine et fonctionnalités spécifiques non inclus. Un devis personnalisé est établi selon les besoins de votre projet.", "worksTitle": "Nos réalisations", "worksDesc": "Découvrez un exemple concret de site internet réalisé.", "portfolioDesc": "Création d'un site vitrine pour une entreprise de plomberie. Présentation des prestations, des tarifs, des interventions et des coordonnées.", "visit": "Visiter le site WR Plomberie ↗", "whyTitle": "Pourquoi choisir WebÉclat ?", "why1": "Un site professionnel et personnalisé pour valoriser votre activité et inspirer confiance à vos clients.", "mobile": "Adapté aux mobiles", "why2": "Vous choisissez librement votre formule. La maintenance est facultative, avec des tarifs transparents.", "affordable": "Tarifs accessibles", "why3": "Un interlocuteur pour vous conseiller, créer votre site et vous accompagner dans sa mise en ligne.", "contactTitle": "Parlons de votre projet", "contactDesc": "Vous souhaitez créer un site internet pour votre entreprise ? Contactez WebÉclat pour demander un devis personnalisé.", "contactEmail": "Contactez-nous par e-mail", "contactInfo": "Présentez-nous votre activité et le site que vous souhaitez créer.", "contactPrompt": "Cliquez ci-dessous pour préparer votre demande de devis.", "contactButton": "Remplir le formulaire", "contactNote": "Utilisez le formulaire ci-dessus pour recevoir une réponse par e-mail.", "footer": "© 2026 WebÉclat — Création de sites internet.", "languageLabel": "Langue", "maintenanceNav": "Maintenance", "maintenanceTitle": "Maintenance & suivi", "maintenanceIntro": "Gardez votre site à jour avec nos abonnements facultatifs.", "maintenanceBasic": "Essentiel", "maintenanceComfort": "Confort", "maintenancePremium": "Premium", "perMonth": "/mois", "yearBasic": "ou 49 €/an", "yearComfort": "ou 149 €/an", "yearPremium": "ou 290 €/an", "maintenanceBasicDesc": "Vérification du site, sauvegarde périodique et assistance en cas de problème lié à sa réalisation. Modifications facturées séparément.", "maintenanceComfortDesc": "Prestations Essentiel + une petite modification de texte, photo ou tarif par mois.", "maintenancePremiumDesc": "Prestations Confort + jusqu'à une heure de modifications de contenu par mois et traitement prioritaire les jours ouvrés.", "choosePlan": "Choisir cette formule", "popular": "Le plus demandé", "maintenanceNote": "Abonnements facultatifs. Temps non utilisé non reportable. Nouvelles pages, refontes, hébergement, nom de domaine et services tiers facturés séparément. Conditions précisées au devis.", "quickCreation": "Création de site", "quickMaintenance": "Maintenance", "heroShort": "Des sites modernes pour artisans, commerçants et indépendants, adaptés à tous les écrans.", "formTitle": "Demandez votre devis en ligne", "formIntro": "Remplissez ce formulaire : aucun logiciel de messagerie nécessaire.", "formName": "Votre nom *", "formEmail": "Votre adresse e-mail *", "formBusiness": "Entreprise (facultatif)", "formOffer": "Formule souhaitée *", "formSelect": "Sélectionnez une formule", "formOther": "Autre projet / devis personnalisé", "formMessage": "Décrivez votre projet *", "formConsent": "J'accepte que mes informations soient transmises via Formspree pour répondre à ma demande de devis.", "formPrivacy": "Les informations servent uniquement à répondre à votre demande. Le formulaire utilise le service tiers Formspree.", "formSend": "Envoyer ma demande", "whyHeading1": "Un site à votre image", "whyHeading2": "Sans abonnement obligatoire", "whyHeading3": "Un accompagnement personnalisé", "faqTitle": "Questions fréquentes", "faqIntro": "Les réponses aux questions les plus courantes avant de lancer votre projet.", "faqQ1": "Le prix affiché est-il définitif ?", "faqA1": "Les tarifs présentés sont indicatifs. Un devis personnalisé précise le prix final selon vos besoins, les fonctionnalités souhaitées et les éventuels frais supplémentaires.", "faqQ2": "Dois-je payer un abonnement ?", "faqA2": "Non. La maintenance est facultative. Vous pouvez choisir une formule sans abonnement ou opter pour un suivi à partir de 7,90 € par mois.", "faqQ3": "Puis-je avoir une adresse en .fr ?", "faqA3": "Oui. Vous pouvez utiliser un nom de domaine personnalisé en .fr, acheté et renouvelé séparément à votre nom. WebÉclat peut vous accompagner dans sa configuration.", "faqQ4": "Combien de temps faut-il pour créer mon site ?", "faqA4": "Le délai dépend du nombre de pages, du contenu fourni et des fonctionnalités demandées. Une estimation vous est communiquée dans votre devis."}, "en": {"menu": "Menu", "home": "Home", "offers": "Our offers", "works": "Portfolio", "whyNav": "Why us?", "contact": "Contact", "heroTitle": "A professional website to grow your business.", "heroDesc": "WebÉclat builds modern websites for tradespeople, shops and entrepreneurs. Tailored to your business and designed for desktop, tablet and mobile.", "discover": "Explore our offers", "contactUs": "Contact us", "offersTitle": "Our website packages", "offersDesc": "Modern websites suited to the needs and budgets of small businesses.", "essential": "Essential Website", "professional": "Professional Website", "premium": "Premium Website", "b1": "One-page website", "b2": "Modern design", "b3": "Mobile-friendly", "b4": "Your business presentation", "b5": "Contact button", "p1": "Up to 5 pages", "p2": "Custom design", "p3": "Mobile compatible", "p4": "Project gallery", "p5": "Contact form", "p6": "Basic SEO", "r1": "Up to 8 pages", "r2": "Bespoke design", "r3": "Photo gallery", "r5": "Mobile optimisation", "quote": "Request a quote", "offersNote": "Introductory guide prices. Hosting, domain name and special features are not included. A personalised quote will be provided for your project.", "worksTitle": "Our work", "worksDesc": "See an example of a website we have built.", "portfolioDesc": "A website for a plumbing company, showcasing services, prices, work and contact details.", "visit": "Visit WR Plomberie website ↗", "whyTitle": "Why choose WebÉclat?", "why1": "A professional, tailored website to showcase your business and build customer trust.", "mobile": "Mobile-friendly", "why2": "Choose the package that suits you. Maintenance is optional, with transparent pricing.", "affordable": "Affordable prices", "why3": "One point of contact to advise you, create your website and help you launch it.", "contactTitle": "Let's discuss your project", "contactDesc": "Need a website for your business? Contact WebÉclat for a personalised quote.", "contactEmail": "Contact us by email", "contactInfo": "Tell us about your business and the website you would like.", "contactPrompt": "Click below to prepare your quote request.", "contactButton": "Complete the form", "contactNote": "Use the form above to receive a reply by email.", "footer": "© 2026 WebÉclat — Website creation.", "languageLabel": "Language", "maintenanceNav": "Maintenance", "maintenanceTitle": "Maintenance & support", "maintenanceIntro": "Keep your website up to date with our optional plans.", "maintenanceBasic": "Essential", "maintenanceComfort": "Comfort", "maintenancePremium": "Premium", "perMonth": "/month", "yearBasic": "or €49/year", "yearComfort": "or €149/year", "yearPremium": "or €290/year", "maintenanceBasicDesc": "Site checks, periodic backups and help with issues related to the website we built. Content edits billed separately.", "maintenanceComfortDesc": "Essential services plus one small text, photo or price edit per month.", "maintenancePremiumDesc": "Comfort services plus up to one hour of content updates per month and priority handling on working days.", "choosePlan": "Choose this plan", "popular": "Most popular", "maintenanceNote": "Optional plans. Unused time does not roll over. New pages, redesigns, hosting, domain names and third-party services are billed separately. Terms confirmed in your quote.", "quickCreation": "Website creation", "quickMaintenance": "Maintenance", "heroShort": "Modern websites for tradespeople, shops and freelancers, optimised for every screen.", "formTitle": "Request your quote online", "formIntro": "Complete this form without opening your email app.", "formName": "Your name *", "formEmail": "Your email address *", "formBusiness": "Company (optional)", "formOffer": "Preferred package *", "formSelect": "Select a package", "formOther": "Other project / custom quote", "formMessage": "Describe your project *", "formConsent": "I agree to my information being transmitted via Formspree to answer my request.", "formPrivacy": "Your information is used only to respond to your enquiry. This form uses the third-party service Formspree.", "formSend": "Send my request", "whyHeading1": "A website that reflects you", "whyHeading2": "No mandatory subscription", "whyHeading3": "Personalised guidance", "faqTitle": "Frequently asked questions", "faqIntro": "Answers to common questions before starting your project.", "faqQ1": "Is the displayed price final?", "faqA1": "The prices shown are indicative. Your personalised quote confirms the final price based on your needs, requested features and any additional costs.", "faqQ2": "Do I have to pay a subscription?", "faqA2": "No. Maintenance is optional. You can choose a plan without a subscription or support starting at €7.90 per month.", "faqQ3": "Can I have a .fr domain name?", "faqA3": "Yes. You can use a personalised .fr domain purchased and renewed separately in your name. WebÉclat can help you configure it.", "faqQ4": "How long does it take to build my website?", "faqA4": "Timing depends on the number of pages, supplied content and requested features. Your quote includes an estimated timeframe."}, "es": {"menu": "Menú", "home": "Inicio", "offers": "Ofertas", "works": "Proyectos", "whyNav": "¿Por qué elegirnos?", "contact": "Contacto", "heroTitle": "Una página web profesional para hacer crecer tu negocio.", "heroDesc": "WebÉclat crea sitios web modernos para artesanos, comerciantes y emprendedores. Adaptados a tu imagen y accesibles desde ordenador, tableta y móvil.", "discover": "Ver nuestras ofertas", "contactUs": "Contáctanos", "offersTitle": "Nuestros paquetes web", "offersDesc": "Sitios web modernos adaptados a las necesidades y presupuestos de las pequeñas empresas.", "essential": "Web Esencial", "professional": "Web Profesional", "premium": "Web Premium", "b1": "Web de una página", "b2": "Diseño moderno", "b3": "Adaptado a móviles", "b4": "Presentación de tu actividad", "b5": "Botón de contacto", "p1": "Hasta 5 páginas", "p2": "Diseño personalizado", "p3": "Compatible con móviles", "p4": "Galería de trabajos", "p5": "Formulario de contacto", "p6": "SEO básico", "r1": "Hasta 8 páginas", "r2": "Diseño a medida", "r3": "Galería de fotos", "r5": "Optimización móvil", "quote": "Solicitar presupuesto", "offersNote": "Precios orientativos de lanzamiento. No incluyen alojamiento, dominio ni funciones especiales. Se elaborará un presupuesto personalizado.", "worksTitle": "Nuestros proyectos", "worksDesc": "Descubre un ejemplo de sitio web realizado.", "portfolioDesc": "Creación de un sitio web para una empresa de fontanería con servicios, precios, trabajos y datos de contacto.", "visit": "Visitar WR Plomberie ↗", "whyTitle": "¿Por qué elegir WebÉclat?", "why1": "Una web profesional y personalizada para destacar tu actividad y generar confianza.", "mobile": "Adaptado a móviles", "why2": "Elige libremente tu plan. El mantenimiento es opcional, con precios transparentes.", "affordable": "Precios asequibles", "why3": "Una persona de contacto para asesorarte, crear tu web y acompañarte en su publicación.", "contactTitle": "Hablemos de tu proyecto", "contactDesc": "¿Quieres crear una página web para tu empresa? Contacta con WebÉclat para un presupuesto personalizado.", "contactEmail": "Contáctanos por correo", "contactInfo": "Cuéntanos tu actividad y la web que deseas crear.", "contactPrompt": "Haz clic abajo para preparar tu solicitud.", "contactButton": "Rellenar el formulario", "contactNote": "Utiliza el formulario anterior para recibir una respuesta por correo.", "footer": "© 2026 WebÉclat — Creación de sitios web.", "languageLabel": "Idioma", "maintenanceNav": "Mantenimiento", "maintenanceTitle": "Mantenimiento y seguimiento", "maintenanceIntro": "Mantén tu web actualizada con nuestros planes opcionales.", "maintenanceBasic": "Esencial", "maintenanceComfort": "Confort", "maintenancePremium": "Premium", "perMonth": "/mes", "yearBasic": "o 49 €/año", "yearComfort": "o 149 €/año", "yearPremium": "o 290 €/año", "maintenanceBasicDesc": "Revisión del sitio, copias de seguridad periódicas y asistencia por problemas de nuestra realización. Cambios de contenido aparte.", "maintenanceComfortDesc": "Servicios Esencial más un pequeño cambio de texto, foto o precio al mes.", "maintenancePremiumDesc": "Servicios Confort más hasta una hora de cambios al mes y atención prioritaria en días laborables.", "choosePlan": "Elegir este plan", "popular": "Más solicitado", "maintenanceNote": "Planes opcionales. El tiempo no utilizado no se acumula. Páginas nuevas, rediseños, alojamiento, dominio y servicios externos se facturan aparte. Condiciones en el presupuesto.", "quickCreation": "Creación de sitios web", "quickMaintenance": "Mantenimiento", "heroShort": "Sitios web modernos para artesanos, comercios y autónomos, adaptados a todas las pantallas.", "formTitle": "Solicita tu presupuesto en línea", "formIntro": "Rellena el formulario sin abrir tu correo.", "formName": "Tu nombre *", "formEmail": "Tu correo electrónico *", "formBusiness": "Empresa (opcional)", "formOffer": "Paquete deseado *", "formSelect": "Selecciona un paquete", "formOther": "Otro proyecto / presupuesto personalizado", "formMessage": "Describe tu proyecto *", "formConsent": "Acepto que mis datos se transmitan a través de Formspree para responder a mi solicitud.", "formPrivacy": "Tus datos solo se utilizan para responder a tu solicitud. Este formulario usa el servicio externo Formspree.", "formSend": "Enviar mi solicitud", "whyHeading1": "Una web a tu medida", "whyHeading2": "Sin suscripción obligatoria", "whyHeading3": "Atención personalizada", "faqTitle": "Preguntas frecuentes", "faqIntro": "Respuestas a las preguntas más comunes antes de empezar.", "faqQ1": "¿El precio mostrado es definitivo?", "faqA1": "Los precios son orientativos. El presupuesto personalizado especifica el precio final según tus necesidades y posibles gastos adicionales.", "faqQ2": "¿Es obligatorio pagar una suscripción?", "faqA2": "No. El mantenimiento es opcional. Puedes elegir un plan sin suscripción o soporte desde 7,90 € al mes.", "faqQ3": "¿Puedo tener un dominio .fr?", "faqA3": "Sí. Puedes comprar y renovar por separado un dominio .fr a tu nombre. WebÉclat puede ayudarte a configurarlo.", "faqQ4": "¿Cuánto tiempo se tarda en crear mi web?", "faqA4": "Depende del número de páginas, los contenidos y las funciones. El presupuesto incluirá una estimación."}, "de": {"menu": "Menü", "home": "Startseite", "offers": "Angebote", "works": "Referenzen", "whyNav": "Warum wir?", "contact": "Kontakt", "heroTitle": "Eine professionelle Website für den Erfolg Ihres Unternehmens.", "heroDesc": "WebÉclat erstellt moderne Websites für Handwerksbetriebe, Geschäfte und Selbstständige. Individuell gestaltet und für Computer, Tablets und Smartphones optimiert.", "discover": "Unsere Angebote ansehen", "contactUs": "Kontaktieren Sie uns", "offersTitle": "Unsere Website-Pakete", "offersDesc": "Moderne Websites für die Bedürfnisse und Budgets kleiner Unternehmen.", "essential": "Basis-Website", "professional": "Professionelle Website", "premium": "Premium-Website", "b1": "Einseitige Website", "b2": "Modernes Design", "b3": "Smartphone-optimiert", "b4": "Vorstellung Ihres Unternehmens", "b5": "Kontakt-Button", "p1": "Bis zu 5 Seiten", "p2": "Individuelles Design", "p3": "Mobilfreundlich", "p4": "Projektgalerie", "p5": "Kontaktformular", "p6": "Grundlegende SEO", "r1": "Bis zu 8 Seiten", "r2": "Maßgeschneidertes Design", "r3": "Fotogalerie", "r5": "Mobile Optimierung", "quote": "Angebot anfordern", "offersNote": "Unverbindliche Einführungspreise. Hosting, Domain und Sonderfunktionen sind nicht enthalten. Sie erhalten ein individuelles Angebot.", "worksTitle": "Unsere Referenzen", "worksDesc": "Entdecken Sie ein Beispiel unserer Arbeit.", "portfolioDesc": "Erstellung einer Website für einen Sanitärbetrieb mit Leistungen, Preisen, Projekten und Kontaktdaten.", "visit": "Website von WR Plomberie besuchen ↗", "whyTitle": "Warum WebÉclat wählen?", "why1": "Eine professionelle, individuelle Website, die Ihr Unternehmen präsentiert und Vertrauen schafft.", "mobile": "Mobilfreundlich", "why2": "Sie wählen Ihr Paket frei. Die Wartung ist optional, mit transparenten Preisen.", "affordable": "Faire Preise", "why3": "Ein fester Ansprechpartner berät Sie, erstellt Ihre Website und begleitet die Veröffentlichung.", "contactTitle": "Sprechen wir über Ihr Projekt", "contactDesc": "Sie benötigen eine Website für Ihr Unternehmen? Kontaktieren Sie WebÉclat für ein individuelles Angebot.", "contactEmail": "Kontakt per E-Mail", "contactInfo": "Beschreiben Sie Ihr Unternehmen und Ihre Wunsch-Website.", "contactPrompt": "Klicken Sie unten, um Ihre Anfrage vorzubereiten.", "contactButton": "Formular ausfüllen", "contactNote": "Nutzen Sie das Formular oben, um eine Antwort per E-Mail zu erhalten.", "footer": "© 2026 WebÉclat — Website-Erstellung.", "languageLabel": "Sprache", "maintenanceNav": "Wartung", "maintenanceTitle": "Wartung & Betreuung", "maintenanceIntro": "Halten Sie Ihre Website mit unseren optionalen Paketen aktuell.", "maintenanceBasic": "Basis", "maintenanceComfort": "Komfort", "maintenancePremium": "Premium", "perMonth": "/Monat", "yearBasic": "oder 49 €/Jahr", "yearComfort": "oder 149 €/Jahr", "yearPremium": "oder 290 €/Jahr", "maintenanceBasicDesc": "Website-Prüfungen, regelmäßige Backups und Hilfe bei Problemen mit unserer Umsetzung. Änderungen werden separat berechnet.", "maintenanceComfortDesc": "Basisleistungen plus eine kleine Änderung an Text, Foto oder Preis pro Monat.", "maintenancePremiumDesc": "Komfortleistungen plus bis zu einer Stunde Inhaltsänderungen im Monat und bevorzugte Bearbeitung an Werktagen.", "choosePlan": "Paket anfragen", "popular": "Am beliebtesten", "maintenanceNote": "Optionale Pakete. Nicht genutzte Zeit verfällt. Neue Seiten, Redesign, Hosting, Domain und Drittanbieterleistungen werden separat berechnet. Bedingungen im Angebot.", "quickCreation": "Website-Erstellung", "quickMaintenance": "Wartung", "heroShort": "Moderne Websites für Handwerk, Handel und Selbstständige – optimiert für alle Geräte.", "formTitle": "Online-Angebot anfordern", "formIntro": "Füllen Sie das Formular aus, ohne Ihr E-Mail-Programm zu öffnen.", "formName": "Ihr Name *", "formEmail": "Ihre E-Mail-Adresse *", "formBusiness": "Unternehmen (optional)", "formOffer": "Gewünschtes Paket *", "formSelect": "Paket auswählen", "formOther": "Anderes Projekt / individuelles Angebot", "formMessage": "Beschreiben Sie Ihr Projekt *", "formConsent": "Ich stimme der Übermittlung meiner Daten über Formspree zur Bearbeitung meiner Anfrage zu.", "formPrivacy": "Ihre Daten werden nur zur Beantwortung Ihrer Anfrage verwendet. Dieses Formular nutzt den Drittanbieter Formspree.", "formSend": "Anfrage senden", "whyHeading1": "Eine Website nach Ihrem Geschmack", "whyHeading2": "Kein Pflichtabonnement", "whyHeading3": "Persönliche Betreuung", "faqTitle": "Häufige Fragen", "faqIntro": "Antworten auf häufige Fragen vor Projektbeginn.", "faqQ1": "Ist der angezeigte Preis verbindlich?", "faqA1": "Die Preise sind Richtwerte. Ihr individuelles Angebot enthält den Endpreis entsprechend Ihren Anforderungen und möglichen Zusatzkosten.", "faqQ2": "Muss ich ein Abonnement abschließen?", "faqA2": "Nein. Wartung ist freiwillig. Sie können ohne Abonnement starten oder Betreuung ab 7,90 € im Monat wählen.", "faqQ3": "Kann ich eine .fr-Domain nutzen?", "faqA3": "Ja. Eine eigene .fr-Domain können Sie separat auf Ihren Namen erwerben und verlängern. WebÉclat hilft bei der Einrichtung.", "faqQ4": "Wie lange dauert die Erstellung?", "faqA4": "Die Dauer hängt von Seitenzahl, Inhalten und Funktionen ab. Sie erhalten eine Schätzung im Angebot."}, "ru": {"menu": "Меню", "home": "Главная", "offers": "Предложения", "works": "Наши работы", "whyNav": "Почему мы?", "contact": "Контакты", "heroTitle": "Профессиональный сайт для развития вашего бизнеса.", "heroDesc": "WebÉclat создаёт современные сайты для мастеров, магазинов и предпринимателей. Индивидуальный дизайн и удобство на компьютерах, планшетах и смартфонах.", "discover": "Посмотреть предложения", "contactUs": "Связаться с нами", "offersTitle": "Наши тарифы на сайты", "offersDesc": "Современные сайты с учётом потребностей и бюджета малого бизнеса.", "essential": "Базовый сайт", "professional": "Профессиональный сайт", "premium": "Премиум-сайт", "b1": "Одностраничный сайт", "b2": "Современный дизайн", "b3": "Для смартфонов", "b4": "Описание вашей деятельности", "b5": "Кнопка связи", "p1": "До 5 страниц", "p2": "Индивидуальный дизайн", "p3": "Поддержка смартфонов", "p4": "Галерея работ", "p5": "Контактная форма", "p6": "Базовая SEO", "r1": "До 8 страниц", "r2": "Дизайн на заказ", "r3": "Фотогалерея", "r5": "Оптимизация для мобильных", "quote": "Запросить расчёт", "offersNote": "Ориентировочные стартовые цены. Хостинг, домен и специальные функции не включены. Индивидуальный расчёт зависит от проекта.", "worksTitle": "Наши работы", "worksDesc": "Посмотрите пример созданного сайта.", "portfolioDesc": "Создание сайта для сантехнической компании с услугами, ценами, выполненными работами и контактами.", "visit": "Посетить сайт WR Plomberie ↗", "whyTitle": "Почему выбирают WebÉclat?", "why1": "Профессиональный сайт с индивидуальным дизайном, который представит ваш бизнес и вызовет доверие клиентов.", "mobile": "Для мобильных", "why2": "Вы свободно выбираете тариф. Поддержка необязательна, цены прозрачны.", "affordable": "Доступные цены", "why3": "Один специалист поможет с выбором, созданием сайта и его публикацией.", "contactTitle": "Обсудим ваш проект", "contactDesc": "Нужен сайт для вашей компании? Свяжитесь с WebÉclat для индивидуального расчёта.", "contactEmail": "Свяжитесь с нами по почте", "contactInfo": "Расскажите о вашем бизнесе и желаемом сайте.", "contactPrompt": "Нажмите ниже, чтобы подготовить запрос.", "contactButton": "Заполнить форму", "contactNote": "Заполните форму выше, чтобы получить ответ по электронной почте.", "footer": "© 2026 WebÉclat — Создание сайтов.", "languageLabel": "Язык", "maintenanceNav": "Поддержка", "maintenanceTitle": "Обслуживание и поддержка", "maintenanceIntro": "Поддерживайте сайт в актуальном состоянии с дополнительными тарифами.", "maintenanceBasic": "Базовый", "maintenanceComfort": "Комфорт", "maintenancePremium": "Премиум", "perMonth": "/мес.", "yearBasic": "или 49 €/год", "yearComfort": "или 149 €/год", "yearPremium": "или 290 €/год", "maintenanceBasicDesc": "Проверки сайта, периодические резервные копии и помощь с проблемами нашей разработки. Правки оплачиваются отдельно.", "maintenanceComfortDesc": "Базовые услуги и одно небольшое изменение текста, фото или цены в месяц.", "maintenancePremiumDesc": "Услуги Комфорт и до одного часа изменений в месяц, приоритет в рабочие дни.", "choosePlan": "Выбрать тариф", "popular": "Популярный", "maintenanceNote": "Подписка необязательна. Неиспользованное время не переносится. Новые страницы, редизайн, хостинг, домен и сторонние услуги оплачиваются отдельно. Условия в предложении.", "quickCreation": "Создание сайтов", "quickMaintenance": "Поддержка", "heroShort": "Современные сайты для мастеров, магазинов и предпринимателей — для любых экранов.", "formTitle": "Запросить расчёт онлайн", "formIntro": "Заполните форму без открытия почтового приложения.", "formName": "Ваше имя *", "formEmail": "Ваш адрес электронной почты *", "formBusiness": "Компания (необязательно)", "formOffer": "Выберите пакет *", "formSelect": "Выберите пакет", "formOther": "Другой проект / индивидуальный расчёт", "formMessage": "Опишите проект *", "formConsent": "Я согласен на передачу моих данных через Formspree для ответа на запрос.", "formPrivacy": "Данные используются только для ответа на ваш запрос. Форма использует сторонний сервис Formspree.", "formSend": "Отправить запрос", "whyHeading1": "Сайт, отражающий ваш стиль", "whyHeading2": "Без обязательной подписки", "whyHeading3": "Индивидуальное сопровождение", "faqTitle": "Частые вопросы", "faqIntro": "Ответы на вопросы перед началом проекта.", "faqQ1": "Окончательна ли указанная цена?", "faqA1": "Цены ориентировочные. Индивидуальное предложение уточнит итоговую стоимость с учетом задач и дополнительных расходов.", "faqQ2": "Обязательна ли подписка?", "faqA2": "Нет. Обслуживание необязательно. Можно выбрать вариант без подписки или поддержку от 7,90 € в месяц.", "faqQ3": "Можно ли использовать домен .fr?", "faqA3": "Да. Домен .fr можно отдельно приобрести и продлевать на свое имя. WebÉclat поможет с настройкой.", "faqQ4": "Сколько времени занимает создание сайта?", "faqA4": "Срок зависит от числа страниц, материалов и функций. Оценка сроков будет в предложении."}};
+const emailAddress = "webcreastudio.france@gmail.com";
+const langSelect = document.getElementById("languageSelect");
+function setLanguage(lang) {
+  if (!translations[lang]) lang = "fr";
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const translated = translations[lang][el.dataset.i18n];
+    if (typeof translated === "string") el.textContent = translated;
+  });
+  langSelect.value = lang;
+  try { localStorage.setItem("webeclat-language", lang); } catch(e) {}
+  document.title = lang === "fr" ? "WebÉclat | Création de sites internet" : "WebÉclat | Website design";
+}
+
+const pricingTranslationUpdates = {
+fr:{essential:'Site Starter',professional:'Site Pro',maintenanceBasic:'Gratuit',maintenanceBasicDesc:"Aucun abonnement obligatoire. Le site reste publié sur son hébergement gratuit, sous réserve des conditions du fournisseur. Modifications et assistance facturées séparément.",maintenanceComfortDesc:'Vérification périodique, assistance liée au site et une petite modification par mois.',maintenancePremiumDesc:"Prestations Confort et jusqu'à une heure de modifications par mois, avec priorité les jours ouvrés.",maintenanceNote:'Abonnements facultatifs, sans engagement, résiliables à tout moment pour les prochaines échéances. Temps non utilisé non reportable. Conditions détaillées au devis.',domainTitle:'Nom de domaine et hébergement',domainDesc:"Une adresse gratuite en .pages.dev est possible selon les conditions du fournisseur. Pour une adresse personnalisée en .fr, le client achète et renouvelle directement son domaine. Nous pouvons aider à le configurer. Les frais du domaine ne sont pas inclus."},
+en:{essential:'Starter Website',professional:'Pro Website',maintenanceBasic:'Free',maintenanceBasicDesc:'No subscription required. Free hosting is subject to provider terms. Edits and support billed separately.',maintenanceComfortDesc:'Periodic checks, website assistance and one small edit per month.',maintenancePremiumDesc:'Comfort benefits plus up to one hour of content edits monthly and priority on business days.',maintenanceNote:'Optional plans, no commitment, cancel anytime for future billing periods. Unused time does not roll over. Full terms in quote.',domainTitle:'Domain name and hosting',domainDesc:'A free .pages.dev address may be available subject to hosting terms. For a .fr domain, the customer purchases and renews it directly. Domain fees are excluded.'},
+es:{essential:'Web Starter',professional:'Web Pro',maintenanceBasic:'Gratis',maintenanceBasicDesc:'Sin suscripción obligatoria. Alojamiento gratuito sujeto a las condiciones del proveedor. Cambios y asistencia aparte.',maintenanceComfortDesc:'Revisiones, asistencia y un pequeño cambio al mes.',maintenancePremiumDesc:'Ventajas Confort y hasta una hora de cambios al mes con prioridad en días laborables.',maintenanceNote:'Planes opcionales, sin permanencia, cancelables para los siguientes períodos. Tiempo no acumulable. Condiciones en el presupuesto.',domainTitle:'Dominio y alojamiento',domainDesc:'Puede utilizarse una dirección .pages.dev gratuita según las condiciones del proveedor. El cliente compra y renueva directamente su dominio .fr. Coste no incluido.'},
+de:{essential:'Starter-Website',professional:'Pro-Website',maintenanceBasic:'Kostenlos',maintenanceBasicDesc:'Kein Abo erforderlich. Kostenloses Hosting unterliegt den Anbieterbedingungen. Änderungen und Hilfe separat.',maintenanceComfortDesc:'Regelmäßige Prüfung, Hilfe und eine kleine Änderung monatlich.',maintenancePremiumDesc:'Komfortleistungen und bis zu einer Stunde Inhaltsänderungen monatlich mit Priorität an Werktagen.',maintenanceNote:'Optionale Abos ohne Bindung, jederzeit für künftige Abrechnungen kündbar. Ungenutzte Zeit verfällt. Details im Angebot.',domainTitle:'Domain und Hosting',domainDesc:'Eine kostenlose .pages.dev-Adresse ist nach Anbieterbedingungen möglich. Eine .fr-Domain kauft und verlängert der Kunde selbst. Domainkosten sind nicht enthalten.'},
+ru:{essential:'Сайт Starter',professional:'Сайт Pro',maintenanceBasic:'Бесплатно',maintenanceBasicDesc:'Подписка необязательна. Бесплатный хостинг зависит от условий провайдера. Изменения и поддержка оплачиваются отдельно.',maintenanceComfortDesc:'Периодические проверки, помощь и одно небольшое изменение в месяц.',maintenancePremiumDesc:'Услуги Confort и до одного часа изменений в месяц, приоритет в рабочие дни.',maintenanceNote:'Необязательные подписки без обязательного срока, отмена для будущих периодов. Неиспользованное время не переносится.',domainTitle:'Домен и хостинг',domainDesc:'Бесплатный адрес .pages.dev возможен согласно условиям провайдера. Домен .fr клиент покупает и продлевает самостоятельно. Стоимость домена не включена.'}
+};
+const promoTranslations = {
+fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
+en:{promoTitle:'Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
+es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
+de:{promoTitle:'Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
+ru:{promoTitle:'Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
+};
+Object.keys(promoTranslations).forEach(lang => Object.assign(translations[lang],promoTranslations[lang]));
+Object.keys(pricingTranslationUpdates).forEach(lang => Object.assign(translations[lang],pricingTranslationUpdates[lang]));
+
+langSelect.addEventListener("change", e => setLanguage(e.target.value));
+let saved = "fr";
+try { saved = localStorage.getItem("webeclat-language") || "fr"; } catch(e) {}
+setLanguage(translations[saved] ? saved : "fr");
+</script>
+<script>
+// Chaque offre propose le formulaire ou un e-mail déjà préparé.
+(function () {
+  const overlay = document.getElementById('quoteChoice');
+  const title = document.getElementById('quoteChoiceTitle');
+  const description = document.getElementById('quoteChoiceText');
+  const formButton = document.getElementById('quoteChoiceForm');
+  const emailButton = document.getElementById('quoteChoiceEmail');
+  const closeButton = document.getElementById('quoteChoiceClose');
+  const offerSelect = document.querySelector('select[name="Formule"]');
+  let previousFocus = null;
+  const words = {
+    fr:['Demander un devis','Choisissez comment envoyer votre demande.','Remplir le formulaire','Envoyer un e-mail préparé','Bonjour,\n\nJe souhaite recevoir un devis pour la formule : ','\n\nVoici quelques informations sur mon projet :\n\n\nMerci de me recontacter.\n\nCordialement,'],
+    en:['Request a quote','How would you like to send your request?','Complete the form','Open a pre-filled email','Hello,\n\nI would like a quote for: ','\n\nDetails about my project:\n\n\nPlease get back to me.\n\nKind regards,'],
+    es:['Solicitar presupuesto','¿Cómo deseas enviar tu solicitud?','Rellenar el formulario','Abrir correo preparado','Hola,\n\nQuisiera un presupuesto para: ','\n\nDetalles de mi proyecto:\n\n\nGracias.\n\nSaludos,'],
+    de:['Angebot anfordern','Wie möchten Sie Ihre Anfrage senden?','Formular ausfüllen','Vorbereitete E-Mail öffnen','Guten Tag,\n\nich möchte ein Angebot für: ','\n\nAngaben zu meinem Projekt:\n\n\nVielen Dank.\n\nMit freundlichen Grüßen,'],
+    ru:['Запросить расчёт','Как вы хотите отправить запрос?','Заполнить форму','Открыть готовое письмо','Здравствуйте!\n\nПрошу рассчитать стоимость пакета: ','\n\nИнформация о проекте:\n\n\nСпасибо!\n\nС уважением,']
+  };
+  function closeDialog() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    if (previousFocus) previousFocus.focus();
+  }
+  document.querySelectorAll('[data-select-plan]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const plan = link.dataset.selectPlan;
+      const lang = document.documentElement.lang;
+      const t = words[lang] || words.fr;
+      if (offerSelect) offerSelect.value = plan;
+      try { sessionStorage.setItem("webeclat-selected-plan",plan); } catch(e) {}
+      title.textContent = t[0] + ' — ' + plan;
+      description.textContent = t[1];
+      formButton.textContent = t[2];
+      emailButton.textContent = t[3];
+      const subject = 'Demande de devis WebÉclat - ' + plan;
+      emailButton.href = 'mailto:webcreastudio.france@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(t[4] + plan + t[5]);
+      previousFocus = link;
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    });
+  });
+  formButton.addEventListener('click', () => {
+    closeDialog();
+    const field = document.querySelector('.quote-form input[name="Nom"]');
+    if (field) setTimeout(() => field.focus({preventScroll:true}), 350);
+  });
+  emailButton.addEventListener('click', closeDialog);
+  closeButton.addEventListener('click', closeDialog);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeDialog(); });
+  document.addEventListener('keydown', e => {
+    if (overlay.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeDialog(); }
+    if (e.key === 'Tab') {
+      const items = [closeButton,formButton,emailButton];
+      const index = items.indexOf(document.activeElement);
+      if (e.shiftKey && index <= 0) { e.preventDefault(); emailButton.focus(); }
+      else if (!e.shiftKey && index === items.length - 1) { e.preventDefault(); closeButton.focus(); }
+    }
+  });
+})();
+document.querySelectorAll('[data-focus-form]').forEach(link => {
+  link.addEventListener('click', () => {
+    const field = document.querySelector('.quote-form input[name="Nom"]');
+    if (field) setTimeout(() => field.focus({preventScroll:true}), 300);
+  });
+});
+</script>
+<script>/* Amélioration de l'accessibilité du menu */
+(function(){
+ const btn=document.getElementById('menuToggle');
+ const links=document.getElementById('navLinks');
+ if(!btn||!links)return;
+ function sync(){btn.setAttribute('aria-label',links.classList.contains('open')?'Fermer le menu':'Ouvrir le menu');}
+ btn.addEventListener('click',sync);
+ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',sync));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
+})();</script>
+<script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script></body></html>
