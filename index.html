@@ -632,6 +632,14 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   }
 }
 </style>
+<style id="webeclat-promo-2026">
+/* Promotion discrète, cohérente avec les couleurs existantes. */
+.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252,.55);border-radius:16px;background:rgba(168,85,247,.09);text-align:center}
+.promo-offer strong{color:#d8b4fe;font-size:18px}
+.promo-offer p{margin:6px 0;color:#f8f7ff;line-height:1.5}
+.promo-offer small{display:block;color:#c9c2d7;font-size:12px;line-height:1.5}
+@media(max-width:768px){.promo-offer{margin:13px auto 16px;padding:13px 12px}.promo-offer strong{font-size:16px}.promo-offer p{font-size:13px}.promo-offer small{font-size:11px}}
+</style>
 </head>
 <body>
 <!-- EN-TETE -->
@@ -681,6 +689,11 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         adaptés aux besoins et aux budgets
         des petites entreprises.
       </p>
+<aside class="promo-offer" aria-label="Offre promotionnelle WebÉclat">
+<strong data-i18n="promoTitle">Offre spéciale : -10 % sur la création de votre site</strong>
+<p data-i18n="promoText">Pour toute commande d'un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).</p>
+<small data-i18n="promoConditions">Offre valable jusqu'au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.</small>
+</aside>
 <div class="cards">
 <!-- STARTER -->
 <article class="card"><h3 data-i18n="essential">Site Starter</h3><div class="price">89 €</div><ul>
@@ -886,6 +899,14 @@ es:{essential:'Web Starter',professional:'Web Pro',maintenanceBasic:'Gratis',mai
 de:{essential:'Starter-Website',professional:'Pro-Website',maintenanceBasic:'Kostenlos',maintenanceBasicDesc:'Kein Abo erforderlich. Kostenloses Hosting unterliegt den Anbieterbedingungen. Änderungen und Hilfe separat.',maintenanceComfortDesc:'Regelmäßige Prüfung, Hilfe und eine kleine Änderung monatlich.',maintenancePremiumDesc:'Komfortleistungen und bis zu einer Stunde Inhaltsänderungen monatlich mit Priorität an Werktagen.',maintenanceNote:'Optionale Abos ohne Bindung, jederzeit für künftige Abrechnungen kündbar. Ungenutzte Zeit verfällt. Details im Angebot.',domainTitle:'Domain und Hosting',domainDesc:'Eine kostenlose .pages.dev-Adresse ist nach Anbieterbedingungen möglich. Eine .fr-Domain kauft und verlängert der Kunde selbst. Domainkosten sind nicht enthalten.'},
 ru:{essential:'Сайт Starter',professional:'Сайт Pro',maintenanceBasic:'Бесплатно',maintenanceBasicDesc:'Подписка необязательна. Бесплатный хостинг зависит от условий провайдера. Изменения и поддержка оплачиваются отдельно.',maintenanceComfortDesc:'Периодические проверки, помощь и одно небольшое изменение в месяц.',maintenancePremiumDesc:'Услуги Confort и до одного часа изменений в месяц, приоритет в рабочие дни.',maintenanceNote:'Необязательные подписки без обязательного срока, отмена для будущих периодов. Неиспользованное время не переносится.',domainTitle:'Домен и хостинг',domainDesc:'Бесплатный адрес .pages.dev возможен согласно условиям провайдера. Домен .fr клиент покупает и продлевает самостоятельно. Стоимость домена не включена.'}
 };
+const promoTranslations = {
+fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
+en:{promoTitle:'Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
+es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
+de:{promoTitle:'Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
+ru:{promoTitle:'Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
+};
+Object.keys(promoTranslations).forEach(lang => Object.assign(translations[lang],promoTranslations[lang]));
 Object.keys(pricingTranslationUpdates).forEach(lang => Object.assign(translations[lang],pricingTranslationUpdates[lang]));
 
 langSelect.addEventListener("change", e => setLanguage(e.target.value));
