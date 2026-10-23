@@ -135,7 +135,13 @@
         padding: 25px 18px;
       }
     }
-  </style>
+  
+/* Portfolio : visuels homogènes et cartes confortables sur mobile */
+#realisations .portfolio-card{margin-top:24px}
+#realisations .portfolio-card .portfolio-image{width:100%;height:clamp(210px,34vw,390px);max-height:none;object-fit:cover}
+#realisations .portfolio-card .portfolio-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+@media(max-width:768px){#realisations .portfolio-card .portfolio-image{height:220px}#realisations .portfolio-card .portfolio-actions{flex-direction:column}#realisations .portfolio-card .portfolio-actions .btn{width:100%;box-sizing:border-box}}
+</style>
 <style>
 header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .language-wrap{display:flex;align-items:center;gap:9px;color:#e2e8f0;font-size:14px}
@@ -716,7 +722,7 @@ body>footer{margin-top:auto}
 <a data-i18n="whyNav" href="apropos.html#avantages">Pourquoi nous ?</a>
 <a data-i18n="contact" href="contact.html#contact">Contact</a>
 <a href="apropos.html#avantages">À propos</a><a href="contact.html#faq">FAQ</a></div>
-</nav><main><div class="page-intro"><h1>Nos réalisations</h1><p>Découvrez un exemple concret de notre travail.</p></div><section class="section" id="realisations">
+</nav><main><div class="page-intro"><h1>Nos réalisations</h1><p>Découvrez des exemples concrets de sites internet créés par WebÉclat.</p></div><section class="section" id="realisations">
 
 
 <article class="portfolio-card">
@@ -734,6 +740,25 @@ body>footer{margin-top:auto}
 <div class="portfolio-actions">
 <a class="btn" data-i18n="visit" href="https://teddy85300.github.io/wr-plomberie/" rel="noopener noreferrer" target="_blank">Visiter WR Plomberie</a>
 <a class="btn portfolio-quote" data-i18n="portfolioQuote" href="contact.html#contact">Demander un site similaire</a>
+</div>
+</div>
+</article>
+
+<article class="portfolio-card portfolio-maxim">
+<div class="portfolio-visual"><img alt="Photographie d’une maison rénovée illustrant le site Maxim Afanasie" class="portfolio-image" loading="lazy" src="demonstrations/maxim-afanasie/apercu.jpg"/></div>
+<div class="portfolio-content">
+<div class="portfolio-eyebrow">Site vitrine • Construction &amp; rénovation</div>
+<h3>Maxim Afanasie</h3>
+<p class="portfolio-description">Un site vitrine élégant et adapté aux mobiles pour une entreprise de construction et rénovation à Romorantin-Lanthenay : prestations, photographies de chantier et demande de devis.</p>
+<ul class="portfolio-features">
+<li>Design moderne et responsive</li>
+<li>Galerie de réalisations</li>
+<li>Ravalement, rénovation, construction et toiture</li>
+<li>Formulaire de demande de devis</li>
+</ul>
+<div class="portfolio-actions">
+<a class="btn" href="https://maxim-afanasie.pages.dev/" rel="noopener noreferrer" target="_blank">Visiter Maxim Afanasie ↗</a>
+<a class="btn portfolio-quote" href="contact.html#contact">Demander un site similaire</a>
 </div>
 </div>
 </article>
