@@ -80,3 +80,7 @@ header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-wi
   section.hero .quick-price strong{font-size:15px!important}
   section.hero>a.btn{font-size:12px!important;padding:10px 9px!important}
 }
+
+/* Maintenance : alignement homogène des tarifs sur les quatre cartes */
+section#maintenance .card .price{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;white-space:nowrap!important;line-height:1.15!important;min-height:72px!important}
+section#maintenance .card .price small{display:block!important;font-size:13px!important;font-weight:400!important;line-height:1.2!important;color:#c7b8d7!important}
