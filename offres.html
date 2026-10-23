@@ -831,7 +831,20 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
  section#services .wb-carousel-controls,section#maintenance .wb-carousel-controls{display:flex!important}
 }
 </style>
-</head><body><header>
+<style id="webeclat-promo-compacte-final">
+.promo-offer{max-width:850px!important;margin:18px auto 25px!important;padding:17px 20px!important;background:linear-gradient(135deg,#2d173f,#24152f)!important;border:1px solid #a855f7!important;border-radius:18px!important;box-shadow:none!important;text-align:center!important}
+.promo-offer>strong{display:block!important;color:#fff!important;font-size:clamp(19px,2.4vw,24px)!important;line-height:1.3!important;font-weight:800!important}
+.promo-expiry{color:#e4d2f5;font-size:13px;margin-top:7px}
+.promo-details{margin:7px auto 0;max-width:690px;border:0!important;background:transparent!important}
+.promo-details>summary{display:inline-block!important;list-style:none;cursor:pointer;color:#d3b4e9!important;font-size:12px!important;padding:5px 9px!important;font-weight:400!important}
+.promo-details>summary::-webkit-details-marker{display:none}
+.promo-details>summary::after{content:' ▾';font-size:12px;color:#d3b4e9}
+.promo-details[open]>summary::after{content:' ▴'}
+.promo-detail-content{padding:7px 10px 4px;color:#e8dff0}
+.promo-detail-content p{font-size:13px!important;margin:0 0 7px!important;color:#f5edf9!important;line-height:1.5!important}
+.promo-detail-content small{display:block;font-size:11px!important;color:#d3c5dd!important;line-height:1.5!important}
+@media(max-width:768px){.promo-offer{padding:15px 13px!important;margin:12px auto 18px!important}.promo-offer>strong{font-size:19px!important}.promo-expiry{font-size:12px}.promo-details{margin-top:5px}}
+</style></head><body><header>
 <div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-test-76.webp"/></div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
 <div class="nav-links" id="navLinks">
@@ -850,8 +863,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
       </p>
 <aside aria-label="Offre promotionnelle WebÉclat" class="promo-offer">
 <strong data-i18n="promoTitle">Offre spéciale : -10 % sur la création de votre site</strong>
-<p data-i18n="promoText">Pour toute commande d'un site avec souscription à une maintenance payante (à partir de 7,90 €/mois), </p>
-<small data-i18n="promoConditions">Offre valable jusqu'au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.</small>
+<div class="promo-expiry" data-i18n="promoExpiry">Jusqu’au 31/12/2026 inclus</div>
+<details class="promo-details"><summary data-i18n="promoToggle">* Voir les conditions</summary><div class="promo-detail-content"><p data-i18n="promoText">Pour toute commande d’un site avec souscription à une maintenance payante (à partir de 7,90 €/mois).</p><small data-i18n="promoConditions">Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.</small></div></details>
 </aside>
 <div class="cards">
 <!-- STARTER -->
@@ -952,11 +965,11 @@ de:{essential:'Starter-Website',professional:'Pro-Website',maintenanceBasic:'Kos
 ru:{essential:'Сайт Starter',professional:'Сайт Pro',maintenanceBasic:'Бесплатно',maintenanceBasicDesc:'Подписка необязательна. Бесплатный хостинг зависит от условий провайдера. Изменения и поддержка оплачиваются отдельно.',maintenanceComfortDesc:'Периодические проверки, помощь и одно небольшое изменение в месяц.',maintenancePremiumDesc:'Услуги Confort и до одного часа изменений в месяц, приоритет в рабочие дни.',maintenanceNote:'Необязательные подписки без обязательного срока, отмена для будущих периодов. Неиспользованное время не переносится.',domainTitle:'Домен и хостинг',domainDesc:'Бесплатный адрес .pages.dev возможен согласно условиям провайдера. Домен .fr клиент покупает и продлевает самостоятельно. Стоимость домена не включена.'}
 };
 const promoTranslations = {
-fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance payante (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
-en:{promoTitle:'Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
-es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Oferta válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
-de:{promoTitle:'Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
-ru:{promoTitle:'Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
+fr:{promoTitle:promoExpiry:'Jusqu’au 31/12/2026 inclus',promoToggle:'* Voir les conditions','Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance payante (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
+en:{promoTitle:promoExpiry:'Until 31 December 2026',promoToggle:'* View conditions','Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
+es:{promoTitle:promoExpiry:'Hasta el 31/12/2026 inclusive',promoToggle:'* Ver condiciones','Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Oferta válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
+de:{promoTitle:promoExpiry:'Bis einschließlich 31.12.2026',promoToggle:'* Bedingungen ansehen','Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
+ru:{promoTitle:promoExpiry:'До 31.12.2026 включительно',promoToggle:'* Условия предложения','Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
 };
 Object.keys(promoTranslations).forEach(lang => Object.assign(translations[lang],promoTranslations[lang]));
 Object.keys(pricingTranslationUpdates).forEach(lang => Object.assign(translations[lang],pricingTranslationUpdates[lang]));
