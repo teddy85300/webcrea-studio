@@ -221,7 +221,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 }
 .quote-form{display:grid;gap:13px;text-align:left;max-width:650px;margin:20px auto}
 .quote-form label{font-weight:600;font-size:14px}
-.quote-form input,.quote-form select,.quote-form textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #40506b;background:#0b1427;color:#fff;border-radius:10px;font:inherit}
+.quote-form input.quote-form select.quote-form textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #40506b;background:#0b1427;color:#fff;border-radius:10px;font:inherit}
 .quote-form textarea{min-height:110px;resize:vertical}
 .quote-form .btn{cursor:pointer;width:100%;margin:5px 0}
 .quote-form .form-consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.4}
@@ -281,7 +281,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
   #services .card h3,#maintenance .card h3 {line-height:1.22!important;}
   #maintenance .card p {line-height:1.5!important;}
   #realisations .portfolio-image {max-width:100%;height:auto;object-fit:cover;}
-  .quote-form input,.quote-form select,.quote-form textarea {font-size:16px!important;min-height:44px;}
+  .quote-form input.quote-form select.quote-form textarea {font-size:16px!important;min-height:44px;}
   .quote-form button {min-height:48px;}
   html {scroll-padding-top:12px;}
 }
@@ -292,9 +292,9 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 :root{color-scheme:dark}
 button,select,input,textarea{font-family:inherit}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d8b4fe;outline-offset:3px}
-.btn,.quick-price,.menu-toggle{touch-action:manipulation}
-.card,.portfolio-card,.contact-box{overflow-wrap:anywhere}
-.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.16)}
+.btn.quick-price.menu-toggle{touch-action:manipulation}
+.card.portfolio-card.contact-box{overflow-wrap:anywhere}
+.quote-form input:focus.quote-form select:focus.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247.16)}
 @media(max-width:768px){
   .hero{padding-bottom:24px!important}
   .hero h1{max-width:28ch!important}
@@ -316,7 +316,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </style><meta content="#09090f" name="theme-color"/><style>
 /* Choix du mode de demande de devis */
 .quote-choice[hidden]{display:none!important}
-.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78)}
+.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0.78)}
 .quote-choice-panel{position:relative;width:min(100%,440px);max-height:90vh;overflow:auto;padding:26px 20px;background:#171525;border:1px solid #8d48ec;border-radius:18px;color:#fff;text-align:center;box-shadow:0 20px 70px #0009}
 .quote-choice-panel h2{font-size:23px;line-height:1.25;margin:8px 26px 12px}
 .quote-choice-panel p{color:#d8d4e5;line-height:1.5;margin:0 0 18px}
@@ -408,7 +408,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section#services article.card .btn, section#maintenance article.card .btn {
     min-height:52px!important; font-size:16px!important; border-radius:14px!important;
   }
-  .quote-form input, .quote-form select, .quote-form textarea { font-size:16px!important; }
+  .quote-form input.quote-form select.quote-form textarea { font-size:16px!important; }
 }
 @media (max-width: 370px) {
   header { gap:4px!important; padding:8px 7px!important; }
@@ -630,7 +630,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </style>
 <style id="webeclat-promo-2026">
 /* Promotion discrète, cohérente avec les couleurs existantes. */
-.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252,.55);border-radius:16px;background:rgba(168,85,247,.09);text-align:center}
+.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252.55);border-radius:16px;background:rgba(168,85,247.09);text-align:center}
 .promo-offer strong{color:#d8b4fe;font-size:18px}
 .promo-offer p{margin:6px 0;color:#f8f7ff;line-height:1.5}
 .promo-offer small{display:block;color:#c9c2d7;font-size:12px;line-height:1.5}
@@ -669,8 +669,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </style>
 <style>
 /* Mise en valeur discrète de la formule Site Pro */
-#services .card.featured{position:relative;border-color:rgba(56,189,248,.7)!important}
-#services .recommended-badge{display:inline-block;align-self:flex-start;width:max-content;max-width:100%;padding:5px 11px;margin-bottom:7px;border:1px solid rgba(56,189,248,.45);border-radius:999px;background:rgba(56,189,248,.10);color:#38bdf8;font-size:12px;font-weight:700;line-height:1.3}
+#services .card.featured{position:relative;border-color:rgba(56,189,248.7)!important}
+#services .recommended-badge{display:inline-block;align-self:flex-start;width:max-content;max-width:100%;padding:5px 11px;margin-bottom:7px;border:1px solid rgba(56,189,248.45);border-radius:999px;background:rgba(56,189,248.10);color:#38bdf8;font-size:12px;font-weight:700;line-height:1.3}
 </style>
 <style id="webeclat-offres-mobile-audit-2026">
 /* Ajustements limites à la page Offres sur smartphone ; navigation et traductions inchangées. */
@@ -751,20 +751,20 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
       </p>
 <aside aria-label="Offre promotionnelle WebÉclat" class="promo-offer">
 <strong data-i18n="promoTitle">Offre spéciale : -10 % sur la création de votre site</strong>
-<p data-i18n="promoText">Pour toute commande d'un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).</p>
+<p data-i18n="promoText">Pour toute commande d'un site avec souscription à une maintenance payante (à partir de 7,90 €/mois), </p>
 <small data-i18n="promoConditions">Offre valable jusqu'au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.</small>
 </aside>
 <div class="cards">
 <!-- STARTER -->
-<article class="card"><h3 data-i18n="essential">Site Starter</h3><div class="price">89 €</div><ul>
+<article class="card"><h3 data-i18n="essential">Site Starter</h3><div class="price">99 €</div><ul>
 <li data-i18n="b1">Site vitrine 1 page</li><li data-i18n="b2">Design moderne</li><li data-i18n="b3">Adapté aux smartphones</li><li data-i18n="b4">Présentation de votre activité</li><li data-i18n="b5">Bouton de contact</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Starter 89 €" href="contact.html#contact">Demander un devis</a></article>
-<article class="card featured"><span class="recommended-badge" data-i18n="recommendedBadge">Notre recommandation</span><h3 data-i18n="professional">Site Pro</h3><div class="price">189 €</div><ul>
+<a class="btn" data-i18n="quote" data-select-plan="Site Starter 99 €" href="contact.html#contact">Demander un devis</a></article>
+<article class="card featured"><span class="recommended-badge" data-i18n="recommendedBadge">Notre recommandation</span><h3 data-i18n="professional">Site Pro</h3><div class="price">249 €</div><ul>
 <li data-i18n="p1">Jusqu'à 5 pages</li><li data-i18n="p2">Design personnalisé</li><li data-i18n="p3">Compatible smartphones</li><li data-i18n="p4">Galerie de réalisations</li><li data-i18n="p5">Formulaire de contact</li><li data-i18n="p6">Référencement de base</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Pro 189 €" href="contact.html#contact">Demander un devis</a></article>
-<article class="card"><h3 data-i18n="premium">Site Premium</h3><div class="price">289 €</div><ul>
+<a class="btn" data-i18n="quote" data-select-plan="Site Pro 249 €" href="contact.html#contact">Demander un devis</a></article>
+<article class="card"><h3 data-i18n="premium">Site Premium</h3><div class="price">399 €</div><ul>
 <li data-i18n="r1">Jusqu'à 8 pages</li><li data-i18n="r2">Design sur mesure</li><li data-i18n="r3">Galerie photos</li><li data-i18n="p5">Formulaire de contact</li><li data-i18n="r5">Optimisation mobile</li><li data-i18n="p6">Référencement de base</li></ul>
-<a class="btn" data-i18n="quote" data-select-plan="Site Premium 289 €" href="contact.html#contact">Demander un devis</a></article>
+<a class="btn" data-i18n="quote" data-select-plan="Site Premium 399 €" href="contact.html#contact">Demander un devis</a></article>
 </div>
 <p class="note" data-i18n="offersNote">
         Tarifs de lancement indicatifs.
@@ -853,9 +853,9 @@ de:{essential:'Starter-Website',professional:'Pro-Website',maintenanceBasic:'Kos
 ru:{essential:'Сайт Starter',professional:'Сайт Pro',maintenanceBasic:'Бесплатно',maintenanceBasicDesc:'Подписка необязательна. Бесплатный хостинг зависит от условий провайдера. Изменения и поддержка оплачиваются отдельно.',maintenanceComfortDesc:'Периодические проверки, помощь и одно небольшое изменение в месяц.',maintenancePremiumDesc:'Услуги Confort и до одного часа изменений в месяц, приоритет в рабочие дни.',maintenanceNote:'Необязательные подписки без обязательного срока, отмена для будущих периодов. Неиспользованное время не переносится.',domainTitle:'Домен и хостинг',domainDesc:'Бесплатный адрес .pages.dev возможен согласно условиям провайдера. Домен .fr клиент покупает и продлевает самостоятельно. Стоимость домена не включена.'}
 };
 const promoTranslations = {
-fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
+fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance payante (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
 en:{promoTitle:'Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
-es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
+es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Oferta válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
 de:{promoTitle:'Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
 ru:{promoTitle:'Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
 };

@@ -221,7 +221,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 }
 .quote-form{display:grid;gap:13px;text-align:left;max-width:650px;margin:20px auto}
 .quote-form label{font-weight:600;font-size:14px}
-.quote-form input,.quote-form select,.quote-form textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #40506b;background:#0b1427;color:#fff;border-radius:10px;font:inherit}
+.quote-form input.quote-form select.quote-form textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #40506b;background:#0b1427;color:#fff;border-radius:10px;font:inherit}
 .quote-form textarea{min-height:110px;resize:vertical}
 .quote-form .btn{cursor:pointer;width:100%;margin:5px 0}
 .quote-form .form-consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.4}
@@ -281,7 +281,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
   #services .card h3,#maintenance .card h3 {line-height:1.22!important;}
   #maintenance .card p {line-height:1.5!important;}
   #realisations .portfolio-image {max-width:100%;height:auto;object-fit:cover;}
-  .quote-form input,.quote-form select,.quote-form textarea {font-size:16px!important;min-height:44px;}
+  .quote-form input.quote-form select.quote-form textarea {font-size:16px!important;min-height:44px;}
   .quote-form button {min-height:48px;}
   html {scroll-padding-top:12px;}
 }
@@ -292,9 +292,9 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;fl
 :root{color-scheme:dark}
 button,select,input,textarea{font-family:inherit}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d8b4fe;outline-offset:3px}
-.btn,.quick-price,.menu-toggle{touch-action:manipulation}
-.card,.portfolio-card,.contact-box{overflow-wrap:anywhere}
-.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.16)}
+.btn.quick-price.menu-toggle{touch-action:manipulation}
+.card.portfolio-card.contact-box{overflow-wrap:anywhere}
+.quote-form input:focus.quote-form select:focus.quote-form textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247.16)}
 @media(max-width:768px){
   .hero{padding-bottom:24px!important}
   .hero h1{max-width:28ch!important}
@@ -316,7 +316,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </style><meta content="#09090f" name="theme-color"/><style>
 /* Choix du mode de demande de devis */
 .quote-choice[hidden]{display:none!important}
-.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78)}
+.quote-choice{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0.78)}
 .quote-choice-panel{position:relative;width:min(100%,440px);max-height:90vh;overflow:auto;padding:26px 20px;background:#171525;border:1px solid #8d48ec;border-radius:18px;color:#fff;text-align:center;box-shadow:0 20px 70px #0009}
 .quote-choice-panel h2{font-size:23px;line-height:1.25;margin:8px 26px 12px}
 .quote-choice-panel p{color:#d8d4e5;line-height:1.5;margin:0 0 18px}
@@ -408,7 +408,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   section#services article.card .btn, section#maintenance article.card .btn {
     min-height:52px!important; font-size:16px!important; border-radius:14px!important;
   }
-  .quote-form input, .quote-form select, .quote-form textarea { font-size:16px!important; }
+  .quote-form input.quote-form select.quote-form textarea { font-size:16px!important; }
 }
 @media (max-width: 370px) {
   header { gap:4px!important; padding:8px 7px!important; }
@@ -630,7 +630,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </style>
 <style id="webeclat-promo-2026">
 /* Promotion discrète, cohérente avec les couleurs existantes. */
-.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252,.55);border-radius:16px;background:rgba(168,85,247,.09);text-align:center}
+.promo-offer{max-width:850px;margin:20px auto 25px;padding:16px 20px;border:1px solid rgba(192,132,252.55);border-radius:16px;background:rgba(168,85,247.09);text-align:center}
 .promo-offer strong{color:#d8b4fe;font-size:18px}
 .promo-offer p{margin:6px 0;color:#f8f7ff;line-height:1.5}
 .promo-offer small{display:block;color:#c9c2d7;font-size:12px;line-height:1.5}
@@ -673,7 +673,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
  section.hero#accueil .quick-price>.mobile-quick-value{display:block!important;font-size:clamp(17px,4.4vw,22px)!important;line-height:1.15!important;white-space:nowrap!important}
  section.hero#accueil .quick-price>span:first-child{font-size:12px!important}
  section.hero#accueil>a.btn{min-height:44px!important;width:100%!important;max-width:none!important;margin:2px 0!important;padding:9px 5px!important;font-size:clamp(11px,3.1vw,14px)!important;line-height:1.2!important;border-radius:12px!important}
- section.hero#accueil>a.btn[href^="offres"]{background:rgba(27,24,48,.85)!important;border:1px solid #a855f7!important;color:#f8f7ff!important}
+ section.hero#accueil>a.btn[href^="offres"]{background:rgba(27,24,48.85)!important;border:1px solid #a855f7!important;color:#f8f7ff!important}
  section.hero#accueil>a.btn[href^="contact"]{background:#8729d9!important;border:1px solid #a855f7!important;color:white!important;font-weight:700!important}
  .page-shortcuts{gap:9px!important;margin:12px auto 25px!important;padding:0 12px!important}
  .page-shortcuts a{min-height:112px!important;padding:13px 12px!important;gap:7px!important;position:relative!important}
@@ -725,7 +725,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
  .page-shortcuts a{min-height:44px!important;padding:7px 20px 7px 7px!important}
  .page-shortcuts a strong{font-size:clamp(11px,3.15vw,14px)!important}
  footer{padding:7px!important}
- .mobile-devis-sticky{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:999;justify-content:center;align-items:center;padding:9px 12px max(9px,env(safe-area-inset-bottom));background:rgba(10,9,18,.97);border-top:1px solid rgba(192,132,252,.35);box-shadow:0 -8px 25px #0008}
+ .mobile-devis-sticky{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:999;justify-content:center;align-items:center;padding:9px 12px max(9px,env(safe-area-inset-bottom));background:rgba(10,9,18.97);border-top:1px solid rgba(192,132,252.35);box-shadow:0 -8px 25px #0008}
  .mobile-devis-sticky a{display:block;max-width:480px;width:100%;border-radius:12px;background:#8729d8;color:#fff;text-align:center;font-weight:700;text-decoration:none;padding:12px 16px;font-size:15px;line-height:1.25}
  .mobile-devis-sticky a:focus-visible{outline:3px solid #fff;outline-offset:2px}
 }
@@ -747,17 +747,17 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 @media (max-width:768px) {
   body { min-height:0!important; display:block!important; padding-bottom:68px!important; }
   body>main { flex:none!important; }
-  body>footer { margin-top:0!important; padding:12px 8px!important; border-top:1px solid rgba(56,189,248,.25)!important; }
+  body>footer { margin-top:0!important; padding:12px 8px!important; border-top:1px solid rgba(56,189,248.25)!important; }
   section.hero#accueil { padding:13px 12px 8px!important; }
   section.hero#accueil>.hero-short { font-size:clamp(14px,3.75vw,16px)!important; line-height:1.38!important; max-width:39ch!important; margin:2px auto 10px!important; }
   section.hero#accueil>.quick-prices { margin:7px auto 7px!important; }
-  section.hero#accueil>a.btn[href^="offres"] { grid-column:1/-1!important; width:min(100%,300px)!important; justify-self:center!important; min-height:42px!important; margin:3px auto 2px!important; border-color:#38bdf8!important; background:rgba(20,29,47,.92)!important; color:#f1f7ff!important; box-shadow:0 0 0 1px rgba(56,189,248,.12)!important; }
+  section.hero#accueil>a.btn[href^="offres"] { grid-column:1/-1!important; width:min(100%,300px)!important; justify-self:center!important; min-height:42px!important; margin:3px auto 2px!important; border-color:#38bdf8!important; background:rgba(20,29,47.92)!important; color:#f1f7ff!important; box-shadow:0 0 0 1px rgba(56,189,248.12)!important; }
   .page-shortcuts { margin:6px auto 8px!important; gap:7px!important; }
   .page-shortcuts a { min-height:46px!important; border-color:#4d405f!important; background:linear-gradient(120deg,#20182f,#1b1c34)!important; }
   .page-shortcuts a strong { color:#eee4ff!important; font-weight:700!important; }
   .page-shortcuts a::after { color:#70c9ee!important; }
-  .page-shortcuts a:hover,.page-shortcuts a:focus-visible { border-color:#38bdf8!important; }
-  .mobile-devis-sticky { border-top-color:rgba(56,189,248,.4)!important; }
+  .page-shortcuts a:hover.page-shortcuts a:focus-visible { border-color:#38bdf8!important; }
+  .mobile-devis-sticky { border-top-color:rgba(56,189,248.4)!important; }
 }
 </style>
 <style id="webeclat-final-espacement-rubriques-2026">
@@ -794,7 +794,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 <style id="webeclat-footer-legal-links">
 .footer-legal-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:7px;font-size:12px;line-height:1.4}
 .footer-legal-links a{color:#c9c2d7;text-decoration:underline;text-underline-offset:3px}
-.footer-legal-links a:hover,.footer-legal-links a:focus-visible{color:#d8b4fe}
+.footer-legal-links a:hover.footer-legal-links a:focus-visible{color:#d8b4fe}
 .footer-legal-links span{color:#857b95}
 @media(max-width:768px){.footer-legal-links{font-size:10px;gap:6px;margin-top:5px}.footer-legal-links a{padding:3px 0}}
 </style>
@@ -821,8 +821,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         accessibles sur ordinateur,
         tablette et smartphone.
       </p><p class="hero-short" data-i18n="heroShort">Des sites modernes pour artisans, commerçants et indépendants, adaptés à tous les écrans.</p><div aria-label="Accès rapide aux tarifs" class="quick-prices">
-<a class="quick-price" href="offres.html#services"><span data-i18n="quickCreation">Création de site</span><strong>89 € · 189 € · 289 €</strong><strong class="mobile-quick-value">Dès 89 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
-<a class="quick-price" href="maintenance.html#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>GRATUIT · 7,90 € · 17,90 €<small data-i18n="perMonth">/mois</small></strong><strong class="mobile-quick-value">Dès 0 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="offres.html#services"><span data-i18n="quickCreation">Création de site</span><strong>99 € · 249 € · 399 €</strong><strong class="mobile-quick-value">Dès 99 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
+<a class="quick-price" href="maintenance.html#maintenance"><span data-i18n="quickMaintenance">Maintenance</span><strong>0 € · 7,90 € · 14,90 € · 24,90 €<small data-i18n="perMonth">/mois</small></strong><strong class="mobile-quick-value">Dès 0 €</strong><span aria-hidden="true" class="quick-arrow">↓</span></a>
 </div>
 <a class="btn" data-i18n="discover" href="offres.html#services">
         Découvrir nos offres
@@ -831,7 +831,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
         Nous contacter
       </a>
 </section><div class="page-shortcuts">
-<a href="offres.html#services"><strong>Nos offres</strong><span>Sites vitrines dès 89 € et promotion de -10 % sous conditions.</span></a>
+<a href="offres.html#services"><strong>Nos offres</strong><span>Sites vitrines dès 99 € et promotion de -10 % sous conditions.</span></a>
 <a href="maintenance.html#maintenance"><strong>Maintenance</strong><span>Des formules facultatives à partir de 0 €/mois.</span></a>
 <a href="realisations.html#realisations"><strong>Réalisations</strong><span>Découvrez le site créé pour WR Plomberie.</span></a>
 <a href="apropos.html#avantages"><strong>Pourquoi WebÉclat ?</strong><span>Un accompagnement humain et personnalisé.</span></a>
@@ -903,9 +903,9 @@ de:{essential:'Starter-Website',professional:'Pro-Website',maintenanceBasic:'Kos
 ru:{essential:'Сайт Starter',professional:'Сайт Pro',maintenanceBasic:'Бесплатно',maintenanceBasicDesc:'Подписка необязательна. Бесплатный хостинг зависит от условий провайдера. Изменения и поддержка оплачиваются отдельно.',maintenanceComfortDesc:'Периодические проверки, помощь и одно небольшое изменение в месяц.',maintenancePremiumDesc:'Услуги Confort и до одного часа изменений в месяц, приоритет в рабочие дни.',maintenanceNote:'Необязательные подписки без обязательного срока, отмена для будущих периодов. Неиспользованное время не переносится.',domainTitle:'Домен и хостинг',domainDesc:'Бесплатный адрес .pages.dev возможен согласно условиям провайдера. Домен .fr клиент покупает и продлевает самостоятельно. Стоимость домена не включена.'}
 };
 const promoTranslations = {
-fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance Confort ou Premium (à partir de 7,90 €/mois).',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
+fr:{promoTitle:'Offre spéciale : -10 % sur la création de votre site',promoText:'Pour toute commande d’un site avec souscription à une maintenance maintenance payante (à partir de 7,90 €/mois), ',promoConditions:'Offre valable jusqu’au 31/12/2026 inclus. Remise appliquée uniquement au prix de création du site, hors maintenance, nom de domaine, hébergement spécifique et prestations supplémentaires. Devis personnalisé.'},
 en:{promoTitle:'Special offer: 10% off website creation',promoText:'When ordering a website with a Comfort or Premium maintenance plan (from €7.90/month).',promoConditions:'Valid through 31 December 2026. Discount applies only to website creation, excluding maintenance, domain, specific hosting and extras. Personalised quote.'},
-es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
+es:{promoTitle:'Oferta especial: 10% de descuento en la creación web',promoText:'Al contratar una web con mantenimiento Confort o Premium (desde 7,90 €/mes).',promoConditions:'Oferta válida hasta el 31/12/2026 inclusive. Descuento solo sobre la creación web; no incluye mantenimiento, dominio, alojamiento específico ni extras. Presupuesto personalizado.'},
 de:{promoTitle:'Sonderangebot: 10 % Rabatt auf die Website-Erstellung',promoText:'Bei Bestellung einer Website mit Wartungspaket Confort oder Premium (ab 7,90 €/Monat).',promoConditions:'Gültig bis einschließlich 31.12.2026. Rabatt nur auf die Website-Erstellung, nicht auf Wartung, Domain, spezielles Hosting oder Zusatzleistungen. Individuelles Angebot.'},
 ru:{promoTitle:'Специальное предложение: скидка 10% на создание сайта',promoText:'При заказе сайта с тарифом обслуживания Confort или Premium (от 7,90 €/мес.).',promoConditions:'Действует до 31.12.2026 включительно. Скидка только на создание сайта, без обслуживания, домена, специального хостинга и дополнительных услуг. Индивидуальный расчёт.'}
 };
@@ -997,7 +997,7 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
 })();</script>
 <script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script><script id="mobile-price-translations">(function(){
-const values={fr:['Dès 89 €','Dès 0 €'],en:['From €89','From €0'],es:['Desde 89 €','Desde 0 €'],de:['Ab 89 €','Ab 0 €'],ru:['От 89 €','От 0 €']};
+const values={fr:['Dès 99 €','Dès 0 €'],en:['From €89','From €0'],es:['Desde 99 €','Desde 0 €'],de:['Ab 99 €','Ab 0 €'],ru:['От 99 €','От 0 €']};
 const select=document.getElementById('languageSelect');const nodes=document.querySelectorAll('.mobile-quick-value');
 function update(){const a=values[select?.value]||values.fr;nodes.forEach((n,i)=>n.textContent=a[i]);}
 if(select){select.addEventListener('change',update);update();}
