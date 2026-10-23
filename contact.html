@@ -951,4 +951,30 @@ document.querySelectorAll('[data-focus-form]').forEach(link => {
  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',sync));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');btn.setAttribute('aria-expanded','false');sync();btn.focus();}});
 })();</script>
-<script>(function(){const field=document.querySelector('select[name="Formule"]');if(!field)return;try{const plan=sessionStorage.getItem('webeclat-selected-plan');if(plan){field.value=plan;sessionStorage.removeItem('webeclat-selected-plan');}}catch(e){}})();</script></body></html>
+<script>
+/* Préselectionne la formule choisie depuis Nos offres, sans modifier le formulaire. */
+(function () {
+  const field = document.getElementById('siteChoice');
+  if (!field) return;
+  let plan = '';
+  try {
+    const params = new URLSearchParams(window.location.search);
+    plan = params.get('formule') || params.get('plan') || params.get('offre') || '';
+    if (!plan) plan = sessionStorage.getItem('webeclat-selected-plan') || '';
+  } catch (e) {}
+  if (!plan) return;
+  const normalized = plan.toLowerCase();
+  const match = Array.from(field.options).find(option => option.value === plan)
+    || Array.from(field.options).find(option =>
+      (normalized.includes('starter') && option.value.includes('Starter')) ||
+      (normalized.includes('premium') && option.value.includes('Premium')) ||
+      (normalized.includes('pro') && !normalized.includes('premium') && option.value.includes('Site Pro')) ||
+      (normalized.includes('maintenance seule') && option.value.includes('Maintenance seule'))
+    );
+  if (match) {
+    field.value = match.value;
+    field.dispatchEvent(new Event('change', { bubbles: true }));
+    try { sessionStorage.removeItem('webeclat-selected-plan'); } catch (e) {}
+  }
+})();
+</script></body></html>
