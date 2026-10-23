@@ -691,6 +691,47 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
   #services .cards > .card .btn { font-size: 15px !important; min-height: 48px !important; }
 }
 </style>
+<style id="webeclat-alignement-devis-2026">
+/* Les cartes ont la même hauteur dans le carrousel ; les boutons restent alignés en bas. */
+#services .cards { align-items: stretch !important; }
+#services .cards > article.card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  height: auto;
+}
+#services .cards > article.card > a.btn {
+  margin-top: auto !important;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  #services .cards > article.card > a.btn {
+    margin-top: auto !important;
+    width: 100% !important;
+  }
+}
+</style>
+<style id="webeclat-alignement-devis-definitif-2026">
+/* Priorité supérieure aux anciennes marges mobiles de la page. */
+#services .cards { align-items: stretch !important; }
+#services .cards > article.card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+}
+#services .cards > article.card > a.btn.btn,
+#services .cards > article.card > a.btn[data-select-plan] {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+}
+@media (max-width: 768px) {
+  #services .cards > article.card > a.btn[data-select-plan] {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+  }
+}
+</style>
 </head><body><header>
 <div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-complet.png"/></div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
