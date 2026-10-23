@@ -1,4 +1,5 @@
-/* WebÉclat — feuille de style complète, avec correctifs responsive */
+/* WebÉclat — style global harmonisé, priorité à la lisibilité mobile.
+   Les styles intégrés aux pages peuvent avoir priorité sur ce fichier. */
 :root{--bg:#09090f;--panel:#171525;--panel2:#1b1830;--accent:#a855f7;--accent-light:#c084fc;--text:#f8f7ff;--muted:#c9c2d7;--border:#403052;--cyan:#38bdf8}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -39,34 +40,23 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 footer{background:#090810;border-top:1px solid #35263e;padding:22px;text-align:center;color:#c3b8ce}
 header .logo{display:flex!important;align-items:center!important;flex:0 1 auto;min-width:0;line-height:1!important}
 header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-width:100%;height:auto;object-fit:contain}
-@media(max-width:768px){
-  header{padding:10px 12px}
-  .cards{grid-template-columns:1fr;max-width:500px}
-  .section{padding:40px 14px}
-  .hero{min-height:0;padding:36px 14px}
-  .hero h1{font-size:28px}
-  .hero p{font-size:14px}
-  .card{padding:20px}
-  .nav-links{gap:10px}
-  header{gap:5px!important}
-  header .logo{flex:1 1 auto!important;min-width:0!important}
-  header .logo .brand-full-logo{width:100%;max-width:245px;height:auto}
-  header .language-wrap{flex:0 0 auto!important;margin-left:auto!important}
-  header .language-wrap select{width:clamp(94px,24vw,118px)!important;max-width:118px!important}
-  header .menu-toggle{flex:0 0 39px!important}
-}
-@media(max-width:390px){header .logo .brand-full-logo{max-width:205px}header .language-wrap select{width:99px!important}}
 
-/* Correctifs smartphone : ciblage précis des blocs HTML existants.
-   Ces règles utilisent !important car index.html contient déjà des styles intégrés. */
+/* Réglages regroupés : une seule définition par taille d'écran. */
 @media(max-width:768px){
   html,body{max-width:100%;overflow-x:clip}
-  header{gap:7px!important;padding:10px 10px!important}
-  header .logo .brand-full-logo{max-width:225px!important;mix-blend-mode:normal!important}
+  header{gap:7px!important;padding:10px!important}
+  header .logo{flex:1 1 auto!important;min-width:0!important}
+  header .logo .brand-full-logo{width:100%;max-width:225px!important;mix-blend-mode:normal!important}
+  header .language-wrap{flex:0 0 auto!important;margin-left:auto!important}
   header .language-wrap select{width:96px!important;max-width:96px!important;min-width:0!important}
   header .menu-toggle{flex:0 0 42px!important;width:42px!important;min-width:42px!important}
-  section.hero{padding:26px 16px 30px!important}
+  .nav-links{gap:10px}
+  .section{padding:40px 14px}
+  .cards{grid-template-columns:1fr;max-width:500px;gap:16px}
+  .card{padding:20px}
+  section.hero{min-height:0;padding:26px 16px 30px!important}
   section.hero h1{font-size:clamp(24px,6vw,30px)!important;max-width:25ch!important;line-height:1.18!important}
+  section.hero p{font-size:15px}
   section.hero .hero-short{font-size:15px!important;line-height:1.5!important;max-width:36ch!important}
   section.hero .quick-prices{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:11px!important;width:100%!important;max-width:420px!important;margin:18px auto!important}
   section.hero .quick-price{display:flex!important;min-width:0!important;width:100%!important;min-height:82px!important;padding:12px 24px!important;gap:3px!important}
@@ -89,15 +79,4 @@ header .logo .brand-full-logo{display:block;width:clamp(240px,25vw,340px);max-wi
   header .menu-toggle{flex:0 0 39px!important;width:39px!important;min-width:39px!important}
   section.hero .quick-price strong{font-size:15px!important}
   section.hero>a.btn{font-size:12px!important;padding:10px 9px!important}
-}
-
-/* Accueil mobile : occupe au minimum l'écran restant après l'en-tête.
-   Le contenu peut dépasser sur les petits téléphones sans être coupé. */
-@media(max-width:768px){
-  body{--webeclat-header-height:100px}
-  section.hero{
-    min-height:calc(100vh - var(--webeclat-header-height))!important;
-    min-height:calc(100svh - var(--webeclat-header-height))!important;
-    justify-content:center!important;
-  }
 }
