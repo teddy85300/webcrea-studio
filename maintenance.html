@@ -667,6 +667,20 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 #maintenance .card .price small {color:#38bdf8!important;}
 .promo-offer .promo-discount {color:#38bdf8!important;}
 </style>
+
+<style id="webeclat-maintenance-mobile-refinement">
+@media (max-width: 768px) {
+  #maintenance { padding-top: 30px !important; }
+  #maintenance > h2 { font-size: clamp(25px, 6.5vw, 30px) !important; line-height: 1.2 !important; margin-bottom: 12px !important; }
+  #maintenance > p.intro { font-size: 15px !important; line-height: 1.5 !important; max-width: 34ch; margin: 0 auto 14px !important; }
+  #maintenance .cards > article.card { padding: 22px 17px !important; }
+  #maintenance article.card h3 { font-size: 22px !important; line-height: 1.3 !important; }
+  #maintenance article.card .price { font-size: 34px !important; line-height: 1.2 !important; }
+  #maintenance article.card p { font-size: 15px !important; line-height: 1.55 !important; }
+  #maintenance article.card a.btn { min-height: 48px !important; font-size: 15px !important; }
+  #maintenance > p.note { font-size: 13px !important; line-height: 1.5 !important; }
+}
+</style>
 </head><body><header>
 <div class="logo"><img alt="WebÉCLAT" class="brand-full-logo" src="images/logo-webeclat-complet.png"/></div>
 <div class="language-wrap"><label for="languageSelect">🌐 <span data-i18n="languageLabel">Langue</span></label><select aria-label="Choisir la langue" id="languageSelect"><option value="fr">🇫🇷 Français</option><option value="en">🇬🇧 English</option><option value="es">🇪🇸 Español</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option></select></div><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" id="menuToggle" type="button"><span aria-hidden="true">☰</span></button></header><nav aria-label="Navigation principale" class="site-navigation">
@@ -677,7 +691,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 <a data-i18n="whyNav" href="apropos.html#avantages">Pourquoi nous ?</a>
 <a data-i18n="contact" href="contact.html#contact">Contact</a>
 <a href="apropos.html#avantages">À propos</a><a href="contact.html#faq">FAQ</a></div>
-</nav><main><div class="page-intro"><h1>Maintenance & suivi</h1><p>Un accompagnement facultatif, adapté à vos besoins.</p></div><section class="section" id="maintenance">
+</nav><main><section class="section" id="maintenance">
 <h2 data-i18n="maintenanceTitle">Maintenance &amp; suivi</h2>
 <p class="intro" data-i18n="maintenanceIntro">Gardez votre site à jour avec nos abonnements facultatifs.</p>
 <div class="cards">
